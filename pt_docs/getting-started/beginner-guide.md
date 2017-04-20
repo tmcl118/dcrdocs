@@ -1,90 +1,80 @@
-# **Beginner's Guide**
+# **Guia para iniciantes**
 
-Last updated for v0.8.2
-
----
-
-## **Welcome To Decred**
-
-Welcome to the world of Decred! We know that getting started with any new cryptocurrency
-can be difficult and we want to make the journey as easy as possible. Decred is well
-documented, with everything from basic information such as, "how do I send decred", to
-super technical stuff like "why did you choose a BLAKE-256 hash function, and how does
-it compare to the Merkle-Damgård construction?".
-
-So that you don't get overwhelmed by the amount of information available, we have created
-this beginner's guide through the documentation. By following the links at the bottom of a few pages, you'll learn how to install, setup, and use the Decred applications; how to obtain DCR; how to vote via Proof-of-Stake; how to use the block explorer; and configure the software to use on the Testnet. 
+Última atualização para v0.8.2
 
 ---
 
-## **Applications**
+## **Bem-vindo à Decred**
 
-Below you'll find a list of currently available applications, with a chart showing their compatibility with different operating systems.
+Bem-vindo ao mundo da Decred! Nós sabemos que iniciar em qualquer nova criptomoeda pode ser difícil, e nós queremos tornar esta jornada a mais fácil possível. As informações sobre a Decred estão bem documentadas e completas, desde a informação mais básica como, por exemplo, “como posso enviar Decred”, até coisas muito técnicas como “por que vocês escolheram a função hash BLAKE-256, e qual a diferença para a função hash Merkle-Damgård?”.
 
-**Paymetheus**: The only Windows GUI client as of v0.8.2. <br />
-**dcrd**: The node daemon, this command-line application handles block management and consensus. <br />
-**dcrwallet**: The wallet daemon, this command-line application handles address and transaction management. <br />
-**dcrctl**: The remote procedure call (RPC) client, this command-line application is used to control dcrd and dcrwallet via RPC commands. <br />
-**Decrediton**: ALPHA cross-platform GUI client as of v0.8.2.
+Para você não ficar perdido no meio de toda a informação disponível, nós criamos este guia para iniciantes sobre a documentação. Clicando nos links ao fim da página, você irá aprender sobre como instalar, configurar e utilizar os programas da Decred; como adquirir DCR; como votar através da Proof-of-Stake; como utilizar o explorador de blocos; e como configurar o software para utilizar na rede de testes. 
+
+---
+
+## **Aplicativos**
+
+Abaixo você encontrará a lista de aplicativos disponíveis atualmente, com uma tabela mostrando a disponibilidade de cada um, em relação aos diversos sistemas operacionais.
+
+**Paymetheus**: A única interface gráfica para Windows na versão v0.8.2. <br />
+**dcrd**: Um node daemon, este aplicativo de linha de comando lida com o gerenciamento dos blocos e o consenso <br />
+**dcrwallet**: Uma carteira daemon, este aplicativo de linha de comando lida com o gerenciamento dos endereços e transações <br />
+**dcrctl**: Um cliente de Chamada remota de procedimento (RPC, sigla em inglês), é um aplicativo de linha de comando, utilizado para controlar o dcrd e a dcrwallet através de comandos RPC <br />
+**Decrediton**: Uma interface gráfica multi-plataforma em ALPHA na versão v0.8.2
 
 |           | Paymetheus | dcrd | dcrwallet | dcrctl | Decrediton |
 | ---------:|:----------:|:----:|:---------:|:------:|:-----------:|
 | Windows   | X          | X    | X         | X      |             |
 | macOS     |            | X    | X         | X      | X           |
 | Linux     |            | X    | X         | X      | X           |
-| Other UNIX|            | X    | X         | X      |             |
+| Outros UNIX|            | X    | X         | X      |             |
 
-"Other UNIX" currently includes various *BSDs and Solaris/illumos.
+"Outros UNIX" atualmente incluem vários *BSDs and Solaris/illumos.
 
-Note: You might soon notice one of the many differences between Decred and other 
-popular cryptocurrencies: the wallet daemon and node daemon are separate.
-A lot of other coins run these functions together in a single daemon.
-For those who choose to use the command line interfaces, this means you must
-run `dcrd` for full node functionality, and `dcrwallet` to store your DCR,
-create transactions and participate in Proof-of-Stake mining/voting.
+Observação: você irá observar que uma das muitas diferenças entre a Decred e outras criptomoedas conhecidas: a carteira daemon e o node daemon são separados. Muitas moedas executam estas duas funções em um único daemon. Para quem optar por utilizar as interfaces de linha de comando, isso significará que você deverá executar o `dcrd` para a funcionalidade full node, e o `dcrwallet` para armazenar suas DCR’s, fazer transações e participar da mineração e/ou votação Proof-of-Stake.
 
 ---
 
-## **Installation Guides**
+## **Guias de instalação**
 
-To get started, choose an option for installations available for your operating system below:
+Para iniciar, escolha uma das instalações disponíves abaixo, para seu sistema operacional:
 
 * [Paymetheus](/getting-started/install-guide.md#paymetheus)
 
-* [Command Line Suite **via dcrinstall**](/getting-started/install-guide.md#dcrinstall) - NOTE: The `dcrinstall` method is the fastest and easiest way to get a command-line node and wallet running. It is recommended and the command-line path setup guides below will assume you've used this method.
+* [Conjunto de linha de comando **via dcrinstall**](/getting-started/install-guide.md#dcrinstall) - Observação: o método `dcrinstall` é o mais fácil e rápido caminho para executar o node e a carteira. Nós o recomendamos, e os guias de configuração abaixo assumem que você utilizou este método.
 * [Decrediton (ALPHA)](/getting-started/install-guide.md#decrediton)
 
 ---
 
-**NOTE:** All of the following guides can be found in the navigation menu with the same names.
+**Observação:** Todos os guias abaixo podem ser encontrados do menu navegação com os mesmos nomes.
 
-## **Paymetheus Path**
+## **Utilizando a Paymetheus**
 
-The following guides, in order, will get you started with Paymetheus:
+Os guias abaixo, na sequência, irão auxiliá-lo a iniciar com a Paymetheus:
 
-* [Paymetheus Setup](/getting-started/user-guides/paymetheus.md)
-* [Using Paymetheus](/getting-started/user-guides/using-paymetheus.md)
+* [Configuração da Paymetheus](/getting-started/user-guides/paymetheus.md)
+* [Utilizando a Paymetheus](/getting-started/user-guides/using-paymetheus.md)
 
-## **Decrediton Path**
+## **Utilizando a Decrediton**
 
-The following guide will help you load Decrediton:
+O guia abaixo, irá auxiliá-lo a utilizar a Decrediton:
 
-* [Decrediton Setup](/getting-started/user-guides/decrediton-setup.md)
+* [Configurando a Decrediton](/getting-started/user-guides/decrediton-setup.md)
 
-## **Command-Line Path**
+## **Utilizando linhas de comando**
 
-The following guides, in order, will get you started with the Command-Line Applications (`dcrd`, `dcrwallet`, `dcrctl`):
+Os guias abaixo, em sequência, irão auxiliá-lo a iniciar com os aplicativos de linha de comando (`dcrd`, `dcrwallet`, `dcrctl`):
 
-* [Command-Line Differences](/getting-started/cli-differences.md)
-* [Startup Option Basics](/getting-started/startup-basics.md)
-* [dcrd Setup](/getting-started/user-guides/dcrd-setup.md)
-* [dcrwallet Setup](/getting-started/user-guides/dcrwallet-setup.md)
-* [dcrctl Basic Usage](/getting-started/user-guides/dcrctl-basics.md)
+* [Diferenças entre linhas de comando](/getting-started/cli-differences.md)
+* [Início básico](/getting-started/startup-basics.md)
+* [Configuração do dcrd](/getting-started/user-guides/dcrd-setup.md)
+* [Configuração da dcrwallet](/getting-started/user-guides/dcrwallet-setup.md)
+* [Utilização básica da dcrctl](/getting-started/user-guides/dcrctl-basics.md)
 
-## **General Guides**
+## **Guias gerais**
 
-The following guides are independent of the different applications:
+Os guias a seguir são independentes dos aplicativos:
 
-* [Obtaining DCR](/getting-started/obtaining-dcr.md)
-* [Using the Block Explorer](/getting-started/using-the-block-explorer.md)
-* [Proof-of-Stake Guide](/mining/proof-of-stake.md)
+* [Adquirindo DCR](/getting-started/obtaining-dcr.md)
+* [Utilizando o Explorador de Blocos](/getting-started/using-the-block-explorer.md)
+* [Guia de mineração Proof-of-Stake](/mining/proof-of-stake.md)
