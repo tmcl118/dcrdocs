@@ -1,171 +1,171 @@
-# Installation Guide
+# Guia de instalação
 
-This guide was last updated for v0.8.2.
+Última atualização para v0.8.2
 
 ---
 
-There are five methods for downloading and installing the Decred software. 
+Existem 5 métodos para download e instalação de software da Decred. 
 
-* [The Windows Installer](#paymetheus) (.msi) - This only works for installing Paymetheus on Windows machines.
-* [dcrinstall](#dcrinstall) - A cross-platform, automatic installer/updater for the command-line applications (`dcrd`, `dcrwallet`, and `dcrctl`).
-* [Decrediton](#decrediton) - For installing decrediton on Linux or Mac.
-* Manually installing and setting up the precompiled [binary releases](#binary-releases) for the cross-platform command-line applications.
-* Compiling from source.
+* [Instalador Windows](#paymetheus) (.msi) - Este método funciona apenas para a instalação da Paymetheus em máquinas Windows.
+* [dcrinstall](#dcrinstall) - Instalador automático Multi-plataforma para aplicativos de linha de comando (`dcrd`, `dcrwallet`, and `dcrctl`).
+* [Decrediton](#decrediton) - Para instalação da decrediton em máquina Linux ou Mac.
+* [Versões dos binários](#binary-releases) pré-compilados para instalação e configuração manual, para aplicativos de linha de comando multi-plataforma.
+* Compilação do código fonte.
 
-The first four methods will be covered here and the fifth may be added at a later date. 
+Os primeiros quatro métodos serão abordados aqui, o quinto poderá ser acrescentado futuramente. 
 
 ---
 
 ## **Paymetheus** 
 
-The Windows Installer (`.msi` file) is located here: [https://github.com/decred/decred-binaries/releases](https://github.com/decred/decred-binaries/releases). It will install Paymetheus to your computer's Program Files folder. Installation is pretty straightforward, but instructions are provided below:
+O instalador para Windows (Arquivo `.msi`) está localizado aqui: [https://github.com/decred/decred-binaries/releases](https://github.com/decred/decred-binaries/releases). Este arquivo irá instalar a Paymetheus no seu computador na pasta Arquivos de Programas. A instalação é bem intuitiva, mas algumas instruções podem ser vistas abaixo:
 
-1. Download the correct file:
+1. Faça o download do arquivo correto:
 
-    For 32-bit computers, download the `decred_0.8.2-beta_x86.msi` file. <br />
-    For 64-bit computers, download the `decred_0.8.2-beta_x64.msi` file.
+    Para computadores 32-bit, faça o download do arquivo `decred_0.8.2-beta_x86.msi`. <br />
+    Para computadores 64-bit, faça o download do arquivo `decred_0.8.2-beta_x64.msi` file.
 
-2. Navigate to download location and double click the `.msi` file.
+2. Localize a pasta onde o arquivo foi baixado e dê dois cliques no arquivo `.msi`.
 
-3. Follow the installation steps. Within this process you'll be prompted to accept an End-User License Agreement.
+3. Siga os passos da instalação. Durante este processo você deverá aceitar o contrato de licença para o usuário final.
 
-4. After setup, the features should be installed to your `..\Program Files\Decred\` folder and accessible through the Start Menu (look for `Decred` in the Program list)
+4. Após a instalação, os aplicativos deverão estar instalados na pasta `..\Arquivos de Programas\Decred\` e acessíveis no menu Iniciar (procure por `Decred` na lista de programas)
 
 ---
 
 ## **dcrinstall**
 
-`dcrinstall` is an automatic installer and upgrader for the Decred software. The newest release can be found here: [https://github.com/decred/decred-release/releases](https://github.com/decred/decred-release/releases). Binaries are provided for Windows, OSX/macOS, Linux, OpenBSD, and FreeBSD. Executing installer will install `dcrd`, `dcrwallet`, and `dcrctl`. Instructions are provided for Mac, Linux, and Windows below (assumed proficiency for *BSD users).
+`dcrinstall` é um instalador e atualizador automático para os softwares da Decred. A última versão pode ser encontrada aqui: [https://github.com/decred/decred-release/releases](https://github.com/decred/decred-release/releases). São oferecidos binários para Windows, OSX/macOS, Linux, OpenBSD, and FreeBSD. A execução do arquivo irá instalar o `dcrd`, `dcrwallet`, e o `dcrctl`. São fornecidas abaixo instruções para usuários Mac, Linux e Windows, (consideramos que usuários *BSD são proficientes).
 
-This method is recommended over the traditional manual installation. `dcrinstall` will automatically download the precompiled, signed binary package found on Github, verify the signature of this package, copy the binaries within the package to a specific folder dependant on OS, create configuration files with settings to allow the 3 applications to communicate with each other, and run you through the wallet creation process. After running through `dcrinstall`, you will be able to launch the software with no additional configuration.
+Este método é o mais recomendado, em relação ao método de instalação tradicional. O `dcrinstall` fará automaticamente o download do pacote binário assinado e pré-compilado, encontrado no GitHub, verificará a assinatura do pacote, copiará os binários presentes no pacote para uma pasta específica do sistema operacional, criará os arquivos configurados para permitir a comunicação dos 3 aplicativos, e conduzir ao processo de criação da carteira. Após a instalação do `dcrinstall`,você poderá executar o software sem a necessidade de nenhuma configuração adicional.
 
 > OSX/macOS:
 
-1. Download the correct file:
+1. Faça o download do arquivo correto:
 
-    For 32-bit computers, download the `dcrinstall-darwin-386-v0.8.2` file. <br />
-    For 64-bit computers, download the `dcrinstall-darwin-amd64-v0.8.2` file.
+    Para computadores 32-bit, faça o download do arquivo `dcrinstall-darwin-386-v0.8.2`<br />
+    Para computadores 64-bit, faça o download do arquivo `dcrinstall-darwin-amd64-v0.8.2`.
 
-2. Make dcrinstall-darwin-xxxx-vx.x.x an executable within your terminal, and run it:
+2. Torne o arquivo dcrinstall-darwin-xxxx-vx.x.x executável utilizando o terminal, e execute:
 
-    Navigate to the directory where the dcrinstall file was downloaded using the `cd` command, run chmod with u+x mode on the dcrinstall file, and run the executable that is created. Below is an example of the commands (change directories or filename as needed):
+    Navegue até a pasta onde o arquivo dcrinstall foi baixado utilizando o comando `cd`, execute chmod com o modo u+x no arquivo dcrinstall, e execute o arquivo executável criado. Abaixo um exemplo dos comandos (modifique as pastas ou nome do arquivo caso seja necessário):
     
     `cd ~/Downloads/` <br />
     `chmod u+x dcrinstall-darwin-amd64-v0.8.2` <br />
     `./dcrinstall-darwin-amd64-v0.8.2`
     
-3. The executable binaries for `dcrd`, `dcrwallet`, and `dcrctl` can now be found in the `~/decred/` directory. Before the `dcrinstall` process completes, you will be taken to the wallet creation prompt. Follow the steps within the [Wallet Creation Walkthrough](/getting-started/user-guides/dcrwallet-setup.md#wallet-creation-walkthrough) of the dcrwallet Setup guide to finish.
+3. Os binários executáveis para `dcrd`, `dcrwallet`, and `dcrctl` poderão ser encontrados na pasta `~/decred/`. Antes de completar o processo `dcrinstall`, você será levado ao processo de criação da carteira. Siga os passos que constam neste [Walkthrough para criação da carteira](/getting-started/user-guides/dcrwallet-setup.md#wallet-creation-walkthrough) do guia de instalação da dcrwallet para finalizar.
 
 > Linux:
 
-1. Download the correct file:
+1. Faça o download do arquivo correto:
 
-    For 32-bit computers, download the `dcrinstall-linux-386-v0.8.2` file. <br />
-    For 64-bit computers, download the `dcrinstall-linux-amd64-v0.8.2` file. <br />
-    For 32-bit ARM computers, download the `dcrinstall-linux-arm-v0.8.2` file. <br />
-    For 64-bit ARM computers, download the `dcrinstall-linux-arm64-v0.8.2` file.
+    Para computadores 32-bit, faça o download do arquivo `dcrinstall-linux-386-v0.8.2`<br />
+    Para computadores 64-bit, faça o download do arquivo `dcrinstall-linux-amd64-v0.8.2`<br />
+    Para computadores 32-bit ARM, faça o download do arquivo `dcrinstall-linux-arm-v0.8.2`<br />
+    Para computadores 64-bit ARM, faça o download do arquivo `dcrinstall-linux-arm64-v0.8.2`
 
-2. Make dcrinstall-darwin-xxxx-vx.x.x an executable within your terminal, and run it:
+2. Torne o arquivo dcrinstall-linux-xxxx-vx.x.x executável utilizando o terminal, e execute:
 
-    Navigate to the directory where the dcrinstall file was downloaded using the `cd` command, run chmod with u+x mode on the dcrinstall file, and run the executable that is created. Below is an example of the commands (change directories or filename as needed):
+    Navegue até a pasta onde o arquivo dcrinstall foi baixado utilizando o comando `cd`, execute chmod com o modo u+x no arquivo dcrinstall, e execute o arquivo executável criado. Abaixo um exemplo dos comandos (modifique as pastas ou nome do arquivo caso seja necessário):
     
     `cd ~/Downloads/` <br />
     `chmod u+x dcrinstall-linux-amd64-v0.8.2` <br />
     `./dcrinstall-linux-amd64-v0.8.2` 
     
-3. The binaries for `dcrd`, `dcrwallet`, and `dcrctl` can now be found in the `~/decred/` directory. Before the `dcrinstall` process completes, you will be taken to the wallet creation prompt. Follow the steps within the [Wallet Creation Walkthrough](/getting-started/user-guides/dcrwallet-setup.md#wallet-creation-walkthrough) of the dcrwallet Setup guide to finish.
+3. Os binários executáveis para `dcrd`, `dcrwallet`, and `dcrctl` poderão ser encontrados na pasta `~/decred/`. Antes de completar o processo `dcrinstall`, você será levado ao processo de criação da carteira. Siga os passos que constam neste [Walkthrough para criação da carteira](/getting-started/user-guides/dcrwallet-setup.md#wallet-creation-walkthrough) do guia de instalação da dcrwallet para finalizar.
 
 > Windows:
 
-1. Download the correct file:
+1. Faça o download do arquivo correto:
 
-    For 32-bit computers, download the `dcrinstall-windows-386-v0.8.2.exe` file. <br /> 
-    For 64-bit computers, download the `dcrinstall-windows-amd64-v0.8.2.exe` file. <br />
+    Para computadores 32-bit, faça o download do arquivo `dcrinstall-windows-386-v0.8.2.exe`<br /> 
+    Para computadores 64-bit, faça o download do arquivo `dcrinstall-windows-amd64-v0.8.2.exe`<br />
 
-2.  Run the dcrinstall executable file.
+2.  Execute o arquivo dcrinstall.
 
-    You can either double click it or run it from the Command Prompt. 
+    Você poderá fazer isso dando um clique duplo sobre o arquivo ou executando através do Prompt de Comando.
     
-3. The binaries for `dcrd`, `dcrwallet`, and `dcrctl` can now be found in the `%HOMEPATH%\decred\` directory (usually %HOMEPATH% is `C:\Users\<username>`). Before the `dcrinstall` process completes, you will be taken to the wallet creation prompt. Follow the steps within the [Wallet Creation Walkthrough](/getting-started/user-guides/dcrwallet-setup.md#wallet-creation-walkthrough) of the dcrwallet Setup guide to finish.
+3. Os binários executáveis para `dcrd`, `dcrwallet`, and `dcrctl` poderão ser encontrados na pasta `%HOMEPATH%\decred\` (normalmente o %HOMEPATH% é `C:\Users\<username>`). Antes de completar o processo `dcrinstall`, você será levado ao processo de criação da carteira. Siga os passos que constam neste [Walkthrough para criação da carteira](/getting-started/user-guides/dcrwallet-setup.md#wallet-creation-walkthrough) do guia de instalação da dcrwallet para finalizar.
 
 ---
 
 ## **Decrediton**
 
-Decrediton is released with the Binary Releases and can be found here: [https://github.com/decred/decred-binaries/releases](https://github.com/decred/decred-binaries/releases). As of v0.8.2, Decrediton is only available for Linux and Mac and is technically an alpha release. There are known bugs in the software that are being worked on.
+A Decrediton é lançada com as versões dos binários e pode ser encontrada aqui: [https://github.com/decred/decred-binaries/releases](https://github.com/decred/decred-binaries/releases). A partir da v0.8.2, Decrediton está disponível apenas para Linux e Mac, e é tecnicamente uma versão alpha. Existem alguns bugs já conhecidos que estão sendo corrigidos.
 
 > macOS/OSX
 
-1. Download the `decrediton-0.8.2.dmg` file.
+1. Faça o download do arquivo `decrediton-0.8.2.dmg`
 
-2. Double click the `decrediton-0.8.2.dmg` file once downloaded to mount the disk image.
+2. Dê um clique duplo no arquivo `decrediton-0.8.2.dmg` para montar a imagem do disco.
 
-3. Drag the decrediton.app into the link to your Applications folder within the disk image.
+3. Arraste o arquivo decrediton.app para o link da pasta Applications, dentro da imagem do disco.
 
 > Linux
 
-1. Download the `decrediton-0.8.2.tar.gz` file.
+1. Faça o download do arquivo `decrediton-0.8.2.tar.gz`
 
-2. Navigate to download location and extract the .tar.gz file:
+2. Navegue até o local onde fez o download e extraia o arquivo .tar.gz:
 
-    Ubuntu File Browser: simply right click on the .tar.gz file and press "Extract Here". <br />
-    Terminal: use the `tar -xvzf filename.tar.gz` command. 
+    Gerenciador de arquivos do Ubuntu: clique com o botão direito no arquivo .tar.gz e clique em "Extrair aqui". <br />
+    Terminal: utilize o comando `tar -xvzf filename.tar.gz` 
     
-    Both of these should extract the tar.gz into a folder that shares the same name. (`e.g. tar -xvzf decrediton-v0.8.2.tar.gz` should extract to `decrediton-v0.8.2`). If successful, this new folder should include a `decrediton` executable.
+    Os dois procedimentos irão extrair o arquivo tar.gz em uma pasta com o mesmo nome do arquivo (`e.g. tar -xvzf decrediton-v0.8.2.tar.gz` irá extrair para `decrediton-v0.8.2`). Estando tudo correto, nesta nova pasta deverá constar um executável chamado `decrediton`.
 
 
 ---
 
-## **Binary Releases**
+## **Versões Binárias**
 
-The newest Binary Releases can be found here: [https://github.com/decred/decred-binaries/releases](https://github.com/decred/decred-binaries/releases). With the exception of the `.msi` and `.dmg` files, they are archives of the latest executable binaries for each release. Although most of this will be unzip and go, instructions are provided for Mac, Linux, and Windows below (assumed proficiency for *BSD users).
+As últimas versões binárias lançadas poderão ser encontradas aqui: [https://github.com/decred/decred-binaries/releases](https://github.com/decred/decred-binaries/releases). Com exceção dos arquivos `.msi` and `.dmg`, eles são arquivos dos últimos binários executáveis de cada versão. Apesar de muitos deles serem prontos para descompactar e instalar, são fornecidas abaixo instruções para usuários Mac, Linux e Windows, (consideramos que usuários *BSD são proficientes).
 
 > OSX/macOS
 
-1. Download the correct file:
+1. Faça o download do arquivo correto:
 
-    For 32-bit computers, download the `decred-darwin-386-v0.8.2.tar.gz` file. <br />
-    For 64-bit computers, download the `decred-darwin-amd64-v0.8.2.tar.gz` file.
+    Para computadores 32-bit, faça o download do arquivo `decred-darwin-386-v0.8.2.tar.gz`<br />
+    Para computadores 64-bit, faça o download do arquivo `decred-darwin-amd64-v0.8.2.tar.gz`
 
-2. Navigate to download location and extract the .tar.gz file:
+2. Navegue até o local onde fez o download e extraia o arquivo .tar.gz:
 
-    Finder: simply double click on the .tar.gz file. <br />
-    Terminal: use the `tar -xvzf filename.tar.gz` command. 
+    Finder: dê um clique duplo no arquivo .tar.gz. <br />
+    Terminal: utilize o comando `tar -xvzf filename.tar.gz` 
 
-    **NOTE**: If you are using Safari on macOS Sierra and have the 'Open "safe" files after downloading' preference enabled, .gz and .zip files are automatically uncompressed after download. The `tar -xvzf filename.tar.gz` command results in this error: `tar: Error opening archive: Failed to open 'filename.tar.gz'`. Use `tar -xvzf filename.tar` instead (remove the .gz from the previous command).
+    **Observação**: Se você estiver utilizando o Safari no macOS Sierra e tem a opção 'Abra arquivos seguros após o download' ativada, os arquivos .gz and .zip são extraídos automaticamente após o download. O comando `tar -xvzf filename.tar.gz` retorna este erro: `tar: Error opening archive: Failed to open 'filename.tar.gz'`. Utilize `tar -xvzf filename.tar` (remova o .gz do comando anterior).
     
-    Both of these should extract the tar into a folder that shares the same name. (`e.g. tar -xvzf decred-darwin-amd64-v0.8.2.tar.gz` should extract to `decred-darwin-amd64-v0.8.2`). It should include `dcrctl`, `dcrd`, `dcrwallet`, `sample-dcrctl.conf`, `sample-dcrd.conf`, and `sample-dcrwallet.conf`.
+    Os dois irão extrair o arquivo tar um uma pasta com o mesmo nome do arquivo. (`por exemplo tar -xvzf decred-darwin-amd64-v0.8.2.tar.gz` deverá extrair para `decred-darwin-amd64-v0.8.2`). A pasta deverá incluir `dcrctl`, `dcrd`, `dcrwallet`, `sample-dcrctl.conf`, `sample-dcrd.conf`, e `sample-dcrwallet.conf`.
 
 
 > Linux
 
-1. Download the correct file:
+1. Faça o download do arquivo correto:
 
-    For 32-bit computers, download the `decred-linux-386-v0.8.2.tar.gz` file. <br />
-    For 64-bit computers, download the `decred-darwin-amd64-v0.8.2.tar.gz` file. <br />
-    For 32-bit ARM computers, download the `decred-linux-arm-v0.8.2.tar.gz` file. <br />
-    For 64-bit ARM computers, download the `decred-linux-arm64-v0.8.2.tar.gz` file.
+    Para computadores 32-bit, faça o download do arquivo `decred-linux-386-v0.8.2.tar.gz` <br />
+    Para computadores 64-bit, faça o download do arquivo `decred-linux-amd64-v0.8.2.tar.gz` <br />
+    Para computadores 32-bit ARM, faça o download do arquivo `decred-linux-arm-v0.8.2.tar.gz` <br />
+    Para computadores 64-bit ARM, faça o download do arquivo `decred-linux-arm64-v0.8.2.tar.gz`
 
-2. Navigate to download location and extract the .tar.gz file:
+2. Navegue até o local onde fez o download e extraia o arquivo .tar.gz:
 
-    Ubuntu File Browser: simply right click on the .tar.gz and select "Extract Here". <br />
-    Terminal: use the `tar -xvzf filename.tar.gz` command. 
+    Gerenciador de arquivos do Ubuntu: clique com o botão direito no arquivo .tar.gz e clique em "Extrair aqui". <br />
+    Terminal: utilize o comando `tar -xvzf filename.tar.gz`
     
-    Both of these should extract the tar.gz into a folder that shares the same name. (`e.g. tar -xvzf decred-darwin-amd64-v0.8.2.tar.gz` should extract to `decred-darwin-amd64-v0.8.2`). It should include `dcrctl`, `dcrd`, `dcrwallet`, `sample-dcrctl.conf`, `sample-dcrd.conf`, and `sample-dcrwallet.conf`.
-
+    Os dois irão extrair o arquivo tar um uma pasta com o mesmo nome do arquivo. (`por exemplo tar -xvzf decred-linux-amd64-v0.8.2.tar.gz` deverá extrair para `decred-linux-amd64-v0.8.2`). A pasta deverá incluir `dcrctl`, `dcrd`, `dcrwallet`, `sample-dcrctl.conf`, `sample-dcrd.conf`, e `sample-dcrwallet.conf`.
+    
 > Windows
 
-Note: Windows 7/8/10 natively provides support for `.zip` files, therefore it is preferable to use the `.zip` file so that third-party applications aren't required for the `.tar.gz` file. Instructions are provided for the `.zip` file.
+Observação: os Windows 7/8/10 oferecem suporte nativo para arquivos `.zip`, portanto é preferível utilizar o arquivo `.zip` assim não é necessário a instalação de um outro programa para o arquivo `.tar.gz`. As instruções são baseadas no arquivo `.zip`.
 
-1. Download the correct file:
+1. Faça o download do arquivo correto:
 
-    For 32-bit computers, download the `decred-windows-386-v0.8.2.zip` file. <br />
-    For 64-bit computers, download the `decred-windows-amd64-v0.8.2.zip` file.
+    Para computadores 32-bit, faça o download do arquivo `decred-windows-386-v0.8.2.zip`<br />
+    Para computadores 64-bit, faça o download do arquivo `decred-windows-amd64-v0.8.2.zip`
 
-2. Navigate to download location and unzip the `.zip` file:
+2. Navegue até o local onde está o arquivo baixado e extraia o arquivo `.zip`:
 
-    File Explorer: Right click on the .zip file, select "Extract All.." and a prompt should open asking for the directory to use. The default will extract the `.zip` to a folder with the same name. It should include `dcrctl`, `dcrd`, `dcrwallet`, `sample-dcrctl.conf`, `sample-dcrd.conf`, and `sample-dcrwallet.conf`.
+    Gerenciador de arquivos: clique com o botão direito no arquivo .zip, selecione "Extrair tudo.." e uma janela irá se abrir perguntando qual pasta utilizar. O padrão irá extrair o arquivo `.zip` para uma pasta com o mesmo nome. Isso irá incluir os arquivos `dcrctl`, `dcrd`, `dcrwallet`, `sample-dcrctl.conf`, `sample-dcrd.conf`, e `sample-dcrwallet.conf`.
 
-If you decide to download the `.tar.gz` file, it will require two separate extractions in some third-party application (7-zip, winRAR, etc..) to get to the actual binaries.
+Se optar por baixar o arquivo `.tar.gz`, será necessário extrair o arquivo duas vezes e um software a parte (7-zip, winRAR, etc..) para conseguir os binários necessários.
 
 ---
