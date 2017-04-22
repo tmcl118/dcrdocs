@@ -1,69 +1,64 @@
-# **Paymetheus Setup Guide** #
+# **Guia de Instalação da Paymetheus** #
 
-Paymetheus is a simple to use graphical wallet for Decred. With it, you can send and receive DCR, 
-purchase tickets for [PoS voting](/mining/proof-of-stake.md), get a history of all your transactions and more.
-About the only thing Paymetheus doesn't do is PoS voting.
-
----
-
-## **Download and Install** ##
-Download and installation instructions are available [here](/getting-started/install-guide.md#windows-installer)
+A Paymetheus é uma carteira com interface gráfica de fácil utilização para a Decred. Com ela você poderá enviar e receber DCR, comprar tickets para [votar na PoS](/mining/proof-of-stake.md), ter um histórico de todas suas transações e muito mais.
+A única coisa que a Paymetheus não faz é votar na PoS.
 
 ---
 
-## **Start Paymetheus** ##
-You're now ready to start using Decred! Start the 'Decred' program. You will now see the connection screen:  
-
-![Paymetheus connection screen](../../img/Paymetheus-dcrd-login.png)  
-
->Two programs are actually running when you start Decred. There's 'Paymetheus' which is the graphical wallet we'll talk further about
->and 'dcrd' which is the communications daemon (pronounced DAY-mon; a program that runs in the background and that does not directly interact
-> with a user) that actually talks to the Decred network. This means that you can run dcrd
->on another computer (such as an always on server) and then use Paymetheus to connect to it remotely.
-
-We're going to use a local one that Paymetheus has already started so just press Continue.
-
-> The first time Paymetheus starts, it will download the blockchain in the background. This can take up to an hour.
+## **Download e Instalação** ##
+As instruções para download e instalação estão disponíveis [aqui](/getting-started/install-guide.md#windows-installer)
 
 ---
 
-## **Create or Restore Wallet** ##
-You will now have the option to create a new wallet or restore a wallet from a seed. If you're reading this, you're probably new and don't 
-already have a wallet so let's create a new one. If you click restore, you will be asked to enter your seed words instead of being given a new seed.
-The rest of the process is the same. Click "Create a new wallet". You will see the following screen:  
+## **Iniciando a Paymetheus** ##
+Você está pronto para iniciar a utilização da Decred! Inicie o programa 'Decred'. E verá a tela de conexão:  
 
-![Paymetheus wallet creation screen](/img/Paymetheus-seed-window.png)  
+![Tela de conexão da Paymetheus](../../img/Paymetheus-dcrd-login.png)  
 
-<i class="fa fa-exclamation-triangle"></i> **STOP HERE!!! DO NOT CLICK CONTINUE! **
+>Dois programas estão sendo executados quando você inicia o Decred. A 'Paymetheus' que é a carteira com interface gráfica, que nós iremos falar sobre ela mais adiante
+>e o 'dcrd' que é o daemon de comunicação (pronunciado como DEI-mon; um programa que é executado em segundo plano e que não interage diretamente com o usuário)
+> ele se comunica diretamente com a rede Decred. Isso significar que você pode executar o dcrd
+>em outro computador (como um servidor "always on") e utilizar a Paymetheus para se conectar com ele remotamente.
 
-**This is the most important part of using Decred. In the white box you key (or seed) words are displayed. These words are the key to your wallet.  **
- **WITHOUT THESE WORDS OR THE HEX REPRESENTATION YOU WILL PERMANANTLY AND FOREVER LOSE ACCESS TO YOUR FUNDS!**  
+Iremos utilizar um local que a Paymetheus já iniciou, assim apenas pressione Continue.
 
-**DO NOT GIVE THEM TO ANYONE ELSE, NOT EVEN DECRED DEVELOPERS!**
-
-With these words, someone else can recreate your wallet on another computer and transfer all of funds out to another wallet. It is not possible to reverse a transaction in Decred, so if someone steals your Decred, there is no way to get it back.  
-
-<i class="fa fa-exclamation-triangle"></i> **DO NOT USE THE SAME SEED IN MULTIPLE WALLETS! Visit [Wallets and Seeds FAQ](/faq/wallets-and-seeds.md#3-can-i-run-multiple-wallets) to see why this matters. It is recommended that where possible a new wallet should mean generating a new seed.** 
-
-Decred and other digital currencies are often described as being like a bank account. This is true, but your wallet is like an actual, physical wallet.
-If you lose your wallet, you lose access to whatever you had in it and no one, not even the Decred developers can get it back. So it's very important
-that you take the time to read this page and WRITE DOWN the key words in a safe place. A good idea is to write them on a piece of paper and store them
-somewhere secure and also store them in an ENCRYPTED file on your computer. Cloud storage like Dropbox or OneDrive is fine, but remember that other people
-can access them which is why you should encrypt the file (MS Word or Libre/OpenOffice can do this).  
-
-Okay, so you've secured your key words in at least two different places. Click Continue. You are now asked to type them back in to ensure you have written 
-them down correctly in case you need to restore your wallet later. Note you can't paste them; you will need to type them. 
-This is to make sure you have the words saved somewhere other than the clipboard. Do so and click Confirm.
+> A primeira fez que a Paymetheus inicia, irá fazer o download da blockchain em segundo plano. Isso poderá demorar até uma hora.
 
 ---
 
-## **Choose a Private Wallet Passphrase** ##
-Enter a passphrase to use whenever you create a transaction on the network. There is also the option here for a public passphrase. This encrypts your wallet
-data file on your computer. It just prevents someone from viewing your accounts and transactions should they get access to it. As long as the database is locked,
-they cannot access your funds. For most people this step is usually overkill, so you can leave it unticked.
-Once you've entered your new private (and optional public) passphrase, click Encrypt.  
+## **Criar ou restaurar uma carteira** ##
+Você terá a opção de criar uma nova carteira ou restaurar uma carteira através de uma seed. Se você está lendo isso, você provavelmente é novato e não possui uma carteira, então vamos criar uma nova. Se você clicar em "Restore", você o sistema irá solicitar que você insira suas "seed words", ao invés de mostrar uma nova seed.
+O restante do processo é o mesmo. Clique em "Create a new wallet". E você verá a seguinte tela:  
 
-Your wallet will now create and synchronize to the blockchain. This can take a few minutes on slower computers. Note that the key words you wrote down will 
-work with any Decred wallet application, not just Paymetheus.
+![Tela de criação da carteira Paymetheus](/img/Paymetheus-seed-window.png)  
 
-Continue to [Using Paymetheus](using-paymetheus.md)
+<i class="fa fa-exclamation-triangle"></i> **PARE AQUI!!! NÃO CLIQUE NO "CONTINUE"! **
+
+**Esta é a parte mais importante para utilizar a Decred. Na caixa branca estão sendo mostradas suas palavras chave (ou seed). Estas palavras são a chave da sua carteira. **
+ **SEM ESTAS PALAVRAS OU A REPRESENTAÇÃO HEX VOCÊ PERDERÁ PERMANENTEMENTE O ACESSO ÀS SUAS MOEDAS!**  
+
+**NÃO MOSTRE ELAS A NINGUÉM, NEM MESMO AOS DESENVOLVEDORES DA DECRED!**
+
+Com essas palavras, qualquer pessoa poderá recriar sua carteira em outro computador e transferir seu saldo para outra carteira. Não é possível reverter uma transação na Decred, portanto se alguém roubar suas Decreds, não é possível receber elas de volta. 
+
+<i class="fa fa-exclamation-triangle"></i> **NÀO UTILIZE A MESMA SEED EM DIFERENTES CARTEIRAS! Visite [o FAQ de Carteiras e Seeds](/faq/wallets-and-seeds.md#3-can-i-run-multiple-wallets) para verificar porque isso é importante. É recomendável que, se possível, criar uma nova carteira significar gerar uma nova seed.** 
+
+A Decred e outras moedas digitais são geralmente descritas como sendo uma conta bancária. Isso é verdade, mas suas carteira, é como uma carteira física.
+Se você perde sua carteira, você perderá acesso a tudo que guardava nela, e ninguém, nem mesmo os desenvolvedores da Decred poderão recuperá-la. Portanto, é bem importante
+que você tire um tempo para ler esta página e ESCREVA as palavras chave em um local seguro. Uma boa idéia é escrever elas em um papel de guardá-las
+em um local seguro e também armazená-las em um arquivo criptografados no seu computador. Armazenar na nuvem, em serviços como Dropbox ou OneDrive pode ser tranquilo, mas lembre-se que outras pessoas
+poderão acessar elas, por isso é importante criptografar o arquivo (o MS Word ou o Libre/OpenOffice podem fazer isso).  
+
+Ok, agora você tem a sua seed segura em pelo menos dois lugares diferentes. Clique em Continue. Agora solicitaremos que você digite ela novamente, para ter certeza que você as escreveu corretamente caso seja necessário resgatar sua carteira mais tarde. Note que você não poderá colar elas; você terá que digitar. 
+Isso é para ter certeza que você tem as palavras salvas em outro local, e não apenas na função colar do seus sistema operacional. Após isso clique em Confirm.
+
+---
+
+## **Escolha uma senha privada (Private Passphrase) para sua carteira** ##
+Insira uma senha para utilizar no momento que você for criar uma transação na rede. Existe também a opção de criar uma senha pública (Public Passphrase). Isso irá criptografar o arquivo com as informações de sua carteira, no seu computador.
+Isso previnirá que alguém consiga ver suas contas e suas transações caso tenha acesso ao seu computador. Com as informações seguras, ninguém terá acesso aos seus fundos. Para muitas pessoas esta etapa é um exagero, se você é um desses basta deixar isto desmarcado.
+Uma vez que você tenha inserido uma nova senha privada (e talvez uma pública), clique em Encrypt.  
+
+Sua carteira será criada e sincronizada com a blockchain. Isso poderá levar alguns minutos em computadores lentos. Vale observar que suas senhas funcionarão em qualquer carteira Decred, não apenas na Paymetheus.
+
+Continue para [Utilizando a Paymetheus](using-paymetheus.md)
