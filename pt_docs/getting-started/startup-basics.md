@@ -1,18 +1,18 @@
-# Startup Basics
+# O básico para iniciar
 
-This guide was last updated for v0.8.2
-
----
-
-This guide applies to command-line application users. Paymetheus and Decrediton users can safely ignore the use of config files - Paymetheus and Decrediton both handle basic configuration automatically. It is also worth noting that some of our guides show configuration file settings and other guides show startup command flags. 
+Este guia foi atualizado para a v0.8.2
 
 ---
 
-## Configuration File Locations
+Este guia se aplica para usuários de programas de linha de comando. Os usuários da Paymetheus e da Decrediton podem tranquilamente ignorar o uso dos config files - a Paymetheus e a Decrediton fazem a configuração básica automaticamente. É importante notar também que alguns de nossos guias mostram a configuração dos arquivos, enquanto outros mostram as command flags.
 
-All of the Decred software, when started, reads from a configuration file to determine which settings it should enable/disable/set during that initial load. All of the command line startup flags `(e.g. dcrwallet --testnet)` can be replaced by settings within the appropriate configuration file `(e.g. dcrwallet --testnet could be replaced by testnet=1 in dcrwallet.conf)`.
+---
 
-These configuration files are located with the application home directory of the application. The location of these default home directories for Windows, macOS/OSX, and Linux are listed below:
+## Locais dos arquivos de configuração
+
+Todo o software da Decred, quando inciado, verifica os arquivos de configuração para determinar quais configurações deverão ser ativadas/desativadas/ajustadas durante o carregamento inicial. Todas as startup flags de linha de comando`(e.g. dcrwallet --testnet)` podem ser substituídas por configurações dentro do arquivo de configuração apropriado `(e.g. dcrwallet --testnet could be replaced by testnet=1 in dcrwallet.conf)`.
+
+Estes arquivos de configuração estão localizados na pasta home do respectivo software. A localização padrão das pastas para Windows, macOS/OSX, e Linux estão listadas abaixo:
 
 Windows:
 
@@ -35,50 +35,50 @@ Linux:
     ~/.dcrctl/
     ~/.config/decrediton
 
-Each of these folders is allowed it's own `.conf` file, named after the individual application (`e.g. dcrd uses dcrd.conf`). Please also note that the `Dcrd` and `Dcrwallet` home directories are automatically created when each application is first launched. You will have to manually create a `Dcrctl` home directory to utilize a config file.
+Cada uma destas pastas possui seu próprio arquivo `.conf`, nomeado de acordo a sua aplicação (`por exemplo, dcrd utiliza dcrd.conf`). Note também que as pastas do `Dcrd` e da `Dcrwallet` são criadas automaticamente quando cada software é iniciado pelas primeira vez. Você terá que criar manualmente a pasta `Dcrctl` para utilizar o arquivo de configuração.
 
-The [dcrinstall](/getting-started/install-guide.md#dcrinstall) installation method automatically creates configuration files, with the [minimum configuration settings](#minimum-configuration) already enabled. 
+O método de instalação [dcrinstall](/getting-started/install-guide.md#dcrinstall) cria automaticamente os arquivos de configuração, com as [definições de configuração mínimas](#minimum-configuration) já habilitadas.
 
-The [Binary Release](/getting-started/install-guide.md#binary-releases) installation method include sample configuration files within the .zip/.tar.gz. It is recommended to copy these config files into the appropriate directory described above, and rename them to remove 'sample-'. These files have many settings commented out (comments are not read by the program during runtime) so all of these settings are effectively disabled. You can enable these pre-written settings by simple deleting the semi-colon before the line.
+O método de instalação das [versões dos binários](/getting-started/install-guide.md#binary-releases) incluem os arquivos de configuração exemplo dentro do .zip/.tar.gz. É recomendável que você copie estes arquivos de configuração dentro da pasta recomendada, como descrito acima, e que os renomeie tirando o 'sample-'. Estes arquivos têm as configurações comentadas (os comentários não são lidos pelos programas durante a execução) assim todas estas configurações ficam desativadas. Você poderá habilitar estas configuração pré-escritas, simplesmente deletando o ponto-e-vírgula de antes da linha.
 
 ---
 
-## Minimum Configuration
+## Configuração mínima
 
-At the very minimum, for `dcrd`, `dcrwallet`, and `dcrctl` to be able to communicate with each other, they need to be launched with the same rpcuser/rpcpass combination. This is done automatically by the [dcrinstall](/getting-started/install-guide.md#dcrinstall) method. For manual configuration, please follow these steps:
+No mínimo, para o `dcrd`, a `dcrwallet`, e o `dcrctl` serem capazes de comunicar entre si, eles terão que ser executados pela mesma combinação de rpcuser/rpcpass. Isto é feito automáticamente pelo método [dcrinstall](/getting-started/install-guide.md#dcrinstall). Para configuração manual, siga os passos abaixo:
 
-1. If the operating system dependant home directories listed in the [configuration files](#configuration-file-locations) section above do not exist, please create them for `dcrd`, `dcrwallet`, and `dcrctl`.
-2. Copy the [sample configuration file](https://github.com/decred/dcrd/blob/master/sample-dcrd.conf) from Github, and paste it into a new text file. Save the text file as `dcrd.conf` in `dcrd`'s home directory.
-3. Copy the [sample configuration file](https://github.com/decred/dcrwallet/blob/master/sample-dcrwallet.conf) from Github, and paste it into a new text file. Save the text file as `dcrwallet.conf` in `dcrwallet`'s home directory.
-4. Create an empty text file and save it as `dcrctl.conf` in `dcrctl`'s home directory.
-5. Choose an arbitrary username and password, these will only be used for each application to communicate via remote procedure call. The easiest configuration is to set them all equal.
-6. Inside `dcrd.conf`, underneath `[Application Options]`, add the following lines:<br /><br />
-        `rpcuser=<chosen-username>`<br />
-        `rpcpass=<chosen-password>`<br /><br />
-7. Inside `dcrwallet.conf`, underneath `[Application Options]`, add the following lines:<br /><br />
-        `username=<chosen-username>`<br />
-        `password=<chosen-password>`<br /><br />
-8. Inside `dcrctl.conf`, add the following lines:<br /><br />
-        `rpcuser=<chosen-username>`<br />
-        `rpcpass=<chosen-password>`<br /><br />
-9. Save all three configuration files.
+1. Se as pastas listadas na seção [arquivos de configuração](#configuration-file-locations), não existirem nas dependencias do sistema operacional, você deverá criá-las para o `dcrd`, `dcrwallet`, e `dcrctl`.
+2. Copie o [arquivo de configuração modelo](https://github.com/decred/dcrd/blob/master/sample-dcrd.conf) do Github, e cole em um novo arquivo de texto. Salve o arquivo texto como `dcrd.conf` na pasta `dcrd`.
+3. Copie o [arquivo de configuração modelo](https://github.com/decred/dcrwallet/blob/master/sample-dcrwallet.conf) do Github, e cole em um novo arquivo de texto. Salve o arquivo texto como `dcrwallet.conf` na pasta `dcrwallet`.
+4. Crie um arquivo de texto vazio e salve como `dcrctl.conf` na pasta `dcrctl`.
+5. Crie um usuário e uma senha a sua escolha, que serão utilizados para a comunicação entre os softwares através de uma Chamada de Procedimento Remoto. A configuração mais simples é definir o mesmo para todos.
+6. Dentro do `dcrd.conf`, sob `[Application Options]`, adicione as seguintes linhas:<br /><br />
+        `rpcuser=<username-escolhido>`<br />
+        `rpcpass=<password-escolhido>`<br /><br />
+7. Dentro do `dcrwallet.conf`, sob `[Application Options]`, adicione as seguintes linhas:<br /><br />
+        `username=<username-escolhido>`<br />
+        `password=<password-escolhido>`<br /><br />
+8. Dentro do `dcrctl.conf`, adicione as seguintes linhas:<br /><br />
+        `rpcuser=<username-escolhido>`<br />
+        `rpcpass=<password-escolhido>`<br /><br />
+9. Salve os 3 arquivos.
 
 ---
 
 ## Startup Command Flags
 
-A majority of the settings you are able to set via the configuration file can also be passed to the application as parameters during launch. For example, the following OS-specific commands would open `dcrd` for Testnet use, an alternative to using `testnet=1` in your config file:
+A maioria das definições que você puder configurar pelo arquivo de configuração, poderão ser transmitidas para o software como parâmetro durante a inicialização. Por exemplo, os comandos específicos de cada sistema operacional (indicados abaixo), poderão abrir o `dcrd` para a Testnet, como alternativas para utilização de `testnet=1` no seu arquivo de configuração:
 
     Windows: dcrd.exe --testnet
     macOS: ./dcrd --testnet
     Linux: ./dcrd --testnet
 
-The above example would first look to the `dcrd` configuration file for settings and then look to the executable command to enable the testnet setting. 
+O exemplo acima verificará primeiro o arquivo de configuração do `dcrd` para as definições e depois verificar o comando executável para habilitar a definição da testnet.
 
 ---
 
-## Advanced Usage
+## Uso avançado
 
-[Storing Login Details in Config Files](/advanced/storing-login-details.md) <!-- This has the same information found in the above, Minimum Configuration section. Could probably delete. -->
+[Armazenando as informações de login nos arquivos de configuração](/advanced/storing-login-details.md) <!-- This has the same information found in the above, Minimum Configuration section. Could probably delete. -->
 
-[Full List of Options for Each Application](/advanced/program-options.md)
+[Lista completa de comandos para cada aplicativo](/advanced/program-options.md)
