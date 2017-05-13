@@ -1,145 +1,123 @@
-# <i class="fa fa-firefox"></i> **Web Client User Guide**
+# <i class="fa fa-firefox"></i> **Guia de uso cliente Web**
 
 ---
 
-A simple web wallet is available for users who do not want to install
-additional software on their computer.  It is based on
-[Copay](https://github.com/bitpay/copay) with Decred specific changes
-added and can be found at
-[https://wallet.decred.org](https://wallet.decred.org)
+Uma carteira web simples está disponível para usuários que não querem instalar algum software adicional no seu computador. Baseia-se na
+[Copay](https://github.com/bitpay/copay) com alterações específicas para a Decred, que podem ser encontradas em [https://wallet.decred.org](https://wallet.decred.org)
 
-There are a couple of things you need to know about the web client
-before you use it:
+Você precisar saber algumas coisas antes de usar o cliente da web:
 
-* You cannot
-  [stake mine](/mining/proof-of-stake.md)
-  with it.
-* Your wallet is kept entirely in the local storage of your web
-  browser.  This means that is you delete your local storage, you will
-  delete you wallet and must recreate from the seed.
-* The security of your wallet depends entirely on the security of your
-  web browser.
-* You can put a pin on your wallet to prevent sending funds but any
-  other access is dependant entirely on the access controls on your
-  computer, not on the server or any login details.
+* Você não poderá [fazer mineração PoS](/mining/proof-of-stake.md) com ela.
+* Sua carteira é mantida inteiramente no armazenamento local do seu navegador web. Isso significa que se você excluir seus arquivos do armazenamento local, você excluirá sua carteira e deverá recriá-la a partir de sua seed.
+* A segurança da sua carteira depende inteiramente da segurança do seu navegador.
+* Você pode colocar uma senha em sua carteira para evitar o envio de fundos, mas qualquer outro acesso depende inteiramente dos controles de acesso do seu computador, não no servidor ou quaisquer detalhes de login.
 
 ---
 
-## **<i class="fa fa-plus-circle"></i> Create your web client wallet**
+## **<i class="fa fa-plus-circle"></i> Criando sua carteira cliente web**
 
-> Step One
+> Primeiro Passo
 
-Go to [https://wallet.decred.org](https://wallet.decred.org). You will
-be presented with the `Terms and Conditions` screen. Pay extra
-attention to the following:
+Vá até [https://wallet.decred.org](https://wallet.decred.org). Você verá a tela com os `Termos e Condições`. Tenha atenção ao seguinte:
 
-Just like the command-line wallet, if you lose your seed words or your
-password for sending funds you will lose access to your wallet. There
-is no password reset. Also note that all transactions on Decred are
-irreversible by design. If you accidentally send funds to the wrong
-address, you will need to ask the recipient to send them back. The
-developers are unable to reverse transactions. Click `I Agree` once
-you have read them. You will now see the welcome screen. If this is
-the first time you have used Decred, click `Get Started`. If you want
-to restore a previously used wallet, click `Import Backup`. This guide
-will assume you are just starting out so click `Get Started`.
+Assim como a carteira de linha de comando, se você perder sua seed ou sua senha para enviar fundos, você perderá o acesso à sua carteira. Não existe  a possibilidade de redefinição de senha. Observe também que todas as transações no Decred são irreversíveis por padrão. Se você acidentalmente enviar fundos para o endereço errado, você precisará pedir ao destinatário para enviá-los de volta.  Nem mesmo os desenvolvedores conseguem reverter as transações. Clique em "I Agree" uma vez que tenha lido. Agora você verá a tela de boas-vindas. Se é a primeira vez que você usa a Decred, clique em `Get Started`. Se você quiser restaurar uma carteira usada anteriormente, clique em `Import Backup`. Este guia irá assumir que você está começando, então clique em `Começar`.
 
-> Step Two
+> Passo Dois
 
-A wallet will be generated for you and you will see this screen:
+Uma carteira será gerada para você e você verá esta tela:
 
-Note that under `Personal Wallet` on the left it says `Testnet`. This
-wallet will only work on the Decred testnet network.  Testnet is meant
-for testing only and coins on testnet have NO value.  Click the
-dropdown in the top left, then click `Add wallet`. Click `Create New
-Wallet`. Give your wallet a name then click `Create New Wallet`.
+> Passo Dois
 
-> Step Three
+Uma carteira será gerada e você verá a seguinte tela:
 
-Your wallet is now created and ready to use. However, before you do
-anything else, you should add a password for sending funds and backup
-the seed words that were used to create your wallet. This is doubly
-true for the web client which does not store a permanent record. Your
-wallet data is stored in the browser cache and can be deleted quite
-easily. If you are running in incognito mode, it will be deleted as
-soon as you close the browser. **WITHOUT THESE KEY WORDS YOU LOSE
-ACCESS TO ALL FUNDS IN YOUR WALLET** should the wallet data be
-deleted. The funds themselves still exist in the blockchain, however,
-without the key you cannot access them.
+Note que abaixo de `Personal Wallet` à esquerda, diz `Testnet`. Esta carteira 
+só funcionará na rede de testes da Decred. A Testnet foi desenvolvida para 
+testes e as moedas no testnet não têm o valor. Clique no menu dropdown 
+no canto superior esquerdo, depois clique em `Add wallet`. Clique 
+em `Create New Wallet`. Dê um nome à sua carteira e clique em `Create New Wallet`.
 
-<i class="fa fa-exclamation-triangle"></i> **DO NOT USE THE SAME SEED IN MULTIPLE WALLETS! Visit [Wallets and Seeds FAQ](/faq/wallets-and-seeds.md#3-can-i-run-multiple-wallets) to see why this matters. It is recommended that where possible a new wallet should mean generating a new seed.** 
+> Passo Três
 
-Click the `Preferences` button on the right opposite your wallet name. There are really only three things you will be interested in here:
+Sua carteira agora está criada e pronta para uso. No entanto, antes de fazer qualquer 
+coisa, você deve adicionar uma senha para enviar fundos e fazer  backup da seed que 
+foi usada para criar sua carteira. Isso é mais importante ainda para quem utilizar 
+navegadores que não armazenam arquivos permanentemente. Os dados da sua carteira são 
+armazenados no cache do navegador e podem ser facilmente excluídos. Se você estiver 
+utilizando o modo de navegação anônima, ela será excluída assim que você fechar o 
+navegador. **SEM A SENHA E A SEED VOCÊ PERDERÁ ACESSO A TODOS OS FUNDOS EM SUA CARTEIRA** 
+caso os dados da carteira sejam eliminados. Os fundos ainda existem na blockchain,
+ no entanto, sem a chave você não poderá acessá-los.
 
-Option                                | Description
+<i class="fa fa-exclamation-triangle"></i> **NÃO USE A MESMA SEED EM DIVERSAS CARTEIRA! Visite [o FAQ de carteiras e Seeds](/faq/wallets-and-seeds.md#3-can-i-run-multiple-wallets) para verificar o motivo. É recomendável que, quando possível, um nova carteira signifique gerar uma nova seed.** 
+
+Clique no botão `Preferences` no lado oposto ao nome da sua carteira. Ali existe  três coisas que você deve ser interessar aqui:
+
+Opção                                | Descrição
 ---                                   | ---
-`Wallet Alias`                        | You can rename the wallet if you wish.
-`Request Password for Spending Funds` | Since your wallet is saved in the browser cache, there is no extra password required to access it. By setting a password here, you ensure that only you can send funds if someone else accesses your browser. Type a password in and click `Set`. Note the alert that says passwords cannot be recovered. There is no password reset feature on the wallet. If you lose the password, you will never be able to move your coins out of the wallet or use them for proof-of-stake voting.
-`Backup`                              | This is where you will find your seed key words.
+`Wallet Alias`                        | Você consegue renomear sua carteira.
+`Request Password for Spending Funds` | Pelo fato de sua carteira estar salva no cache do browser, não é necessário nenhuma senha para acessar seus fundos. Configurando uma senha aqui, você poderá se certificar de que apenas você poderá movimentar seus fundos, caso outra pessoa acesse seu navegador. Digite uma senha e clique em `Set`. Observe o alerta que informa que as senhas não podem ser recuperadas. Não é possível fazer um reset da senha na carteira. Se você perder a senha, você não conseguirá movimentar suas moedas da sua carteira ou utilizá-las para votação no proof-of-stake.
 
-> Step Four
+> Passo quatro
 
-Click `Backup`. You will see this screen:
+Clique em `Backup`. Você verá esta tela:
 
-First of all, read the note. Only use ONE wallet at a time with a
-given seed (See: [FAQ](#)). You can have multiple wallets installed on
-different machines, but only one of them should be running at any
-given time. Click `Show Wallet Seed`. Write this down somewhere safe,
-or put it in an encrypted document to which you will not forget the
-password. This list of words is used to generate the authentication
-key for your wallet. Anyone who possesses this list can access the
-funds in your wallet.
+Primeiramente, leia a nota. Utilize apenas uma carteira a cada momento com
+a mesma seed (Veja: [FAQ](#)). Você poderá diversas carteira instaladas em
+diferentes computadores, mas somente uma deverá ser executada ao mesmo tempo
+Clique em `Show Wallet Seed`. Escreva isso em um local seguro,
+ou coloque isso em um documento criptografado para que você não esqueça sua senha
+Esta lista de palavras é utilizada para gerar uma chave de autenticação
+para sua carteira. Qualquer pessoa que possua esta seed poderá acessar seus fundos
+em sua carteira.
 
-> **VERY IMPORTANT**
+> **MUITO IMPORTANTE**
 
-**DO NOT, UNDER ANY CIRCUMSTANCES, GIVE YOUR KEY WORDS TO ANYONE! NOT EVEN THE DEVELOPERS!**
+**NÃO DÊ, EM NENHUMA CIRCUNSTÂNCIA, SUAS SENHAS PARA NINGUÉM! NEM MESMO OS DESENVOLVEDORES!**
 
-Once you have written the words down (and have triple-checked that they are correct; capitalization is important), go to the next step.
+Uma vez que tenha anotado sua seed (e ter verificado duplamente que elas estão corretas, letras maiúsculas e minúsculas são importantes), vá para a próxima etapa.
 
-> Step Five
+> Passo cinco
 
-Now that you have written down your key words and checked them, do it
-again. Seriously. This step is critical. Without this list your wallet
-cannot be reconstructed and no one, not even the developers, can
-restore it. Now that you are sure the list is stored correctly, click
-`Delete Words`. Click `Back` twice to get to the main wallet screen.
-
----
-
-## **<i class="fa fa-long-arrow-right"></i> Send funds with the web client**
-
-> Step One
-
-On the main web wallet page, click the `Send` button at the
-bottom. You will be taken to this page. Note the `Advanced Options`
-section has already been expanded. In the `To` field, put in the
-Decred address of the recipient.
-
-> Step Two
-
-In `Amount`, enter the value in DCR to send to the recipient. If you
-wish you can type an optional message in the `Note` field. Press
-`Send`. The `Use Unconfirmed Funds` option lets you use funds that the
-network knows are being sent to you but have not yet been confirmed by
-[proof-of-work miners](/mining/proof-of-work.md). If
-this is turned on and the amount specified can only be covered by
-using unconfirmed funds, the transaction will not proceed until the
-required funds have been confirmed.
+Agora que você tenha anotado suas palavras sua seed e tenha verificado, faça isso
+novamente. Sério. Este passo é extremamente importante. Sem esta lista de palavras
+sua carteira não poderá ser utilizada e ninguém, nem mesmo os desenvolvedores, poderão
+recuperá-la. Agora que você tem certeza que armazenou a lista de palavras corretamente, 
+clique em `Delete Words`. Clique em `Back` duas vezes para voltar à tela principal da carteira.
 
 ---
 
-## **<i class="fa fa-long-arrow-left"></i> Receive funds with the web client**
+## **<i class="fa fa-long-arrow-right"></i> Envie fundos com o cliente web**
 
-> Step One
+> Primeiro Passo
 
-Click the `Receive` button at the bottom of the window. You will see
-this screen:
+Na página principal da carteira web, clique no botão `Send` na parte inferior. 
+Você será levado para esta página. Observe a seção `Advanced Options` já está 
+sendo mostrada. No campo `To`, coloque o endereço Decred do destinatário.
 
-Give the person sending you DCR the address displayed (it will start
-with `Ds`) or they can use the QR code if their wallet or service
-accepts them. You can use the same address as often as you want, but
-for privacy it is recommended that you generate a new address each
-time. Do not worry about being given a duplicate address. There are
-around `2.08x10^93` possible addresses, so we will probably reach the
-heat death of the universe before we run out of Decred addresses.
+> Passo Dois
+
+Em `Amount`, insira o valor em DCR para enviar ao destinatário. Se você desejar, 
+você poderá digitar uma mensagem opcional no campo `Note`. Pressione `Enviar`. 
+A opção `Use Unconfirmed Funds` permite a você utilizar fundos que a rede sabe 
+que estão sendo enviados a você, mas ainda não foi confirmado pelos 
+[minerados PoW](/mining/proof-of-work.md). E se esta opção está ativada e o 
+montante especificado só pode ser coberto utilizando os fundos não confirmados, 
+a transação não prosseguirá até que os fundos necessários forem confirmados.
+
+---
+
+## **<i class="fa fa-long-arrow-left"></i> Receba fundo utilizando o cliente web**
+
+> Passo um
+
+Clique no botão `Receive` na parte inferior da janela. Você verá
+esta tela:
+
+Dê à pessoa que está enviando DCR a você o endereço exibido (ele começa com `Ds`) 
+ou podem usar o código QR se sua carteira ou serviço aceitar. Você pode usar o 
+mesmo endereço quantas vezes quiser, mas para privacidade recomenda-se que você 
+gere um novo endereço de tempos em tempos. Não se preocupe em ter recebido um 
+endereço duplicado. Em torno de `2.08x10^93` possíveis endereços podem ser gerados,
+ então provavelmente os endereços Decred se esgotarão apenas após o apocalipse 
+ do universo.
 
