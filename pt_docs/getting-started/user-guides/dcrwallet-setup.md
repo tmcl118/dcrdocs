@@ -1,8 +1,8 @@
-# **dcrwallet Setup Guide**
+# **Guia de configuração da dcrwallet**
 
 Última atualização para v0.8.2.
 
-Este guiar tem o objetivo de auxiliar na configuração do aplicativo da `dcrwallet` utilizando [startup flags](/getting-started/startup-basics.md#startup-command-flags). 
+Este guia tem o objetivo de auxiliar na configuração do aplicativo da `dcrwallet` utilizando [startup flags](/getting-started/startup-basics.md#startup-command-flags). 
 
 **Pré-requisitos:**
 
