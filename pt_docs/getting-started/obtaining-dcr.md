@@ -2,7 +2,7 @@
 
 ---
 
-## **<i class="fa fa-info-circle"></i> Vião Geral**
+## **<i class="fa fa-info-circle"></i> Visão Geral**
 
 Este artigo pretende expor algumas formas de adquirir Decred.
 
