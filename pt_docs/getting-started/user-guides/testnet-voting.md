@@ -1,174 +1,174 @@
-# Testnet Hard Fork Voting Guide
+# Guia de Votação para Hard Fork na Testnet (Rede de testes)
 
-This guide was last updated for v0.8.2 
+Este guia foi atualizado pela última vez para v0.8.2
 
-As of the v0.8.0 release of Feb. 13, 2017, the hard-fork voting mechanism was implemented for testing on the Decred Testnet. The test vote is estimated to start on Feb 25, 2017 around 1PM CST and last for 7 days. If you wish to participate, guides for Paymetheus and the Command-Line applications can be found here. 
+A partir da versão v0.8.0 lançada em 13 de fevereiro de 2017, o mecanismo de votação hard-fork foi implementado para testes na rede de testes da Decred. A votação teste deverá começar em 25 de fevereiro de 2017 à 1 PM CST e durar 7 dias. Se você deseja participar, os guias para participar utilizando a Paymetheus ou os software de linha de comando podem ser encontrados aqui. 
 
 ---
 
-## Introduction
+## Introdução
 
-There is a two-phase process for voting to implement consensus changes that would create a hard fork. Note: the following block intervals are for the testnet, they will differ for mainnet.
+Há um processo de duas fases da votação para implementar mudanças com consenso que criaria um hard fork. Observe: os seguintes intervalos de bloco são para o testnet, eles serão diferentes para o mainnet.
 
-The first step is to meet the upgrade threshold on the network. After the hard fork code is released, a majority of the nodes on the network participating in PoW/PoS need to first upgrade before the voting can begin. For Proof-of-Work, at least 75% of the 100 most recent blocks must have the latest block version. For Proof-of-Stake, 75% of the votes cast within a static 2016 block interval must have the latest vote version.
+O primeiro passo é atender ao limite de atualização na rede. Depois que o código do hard fork é liberado, a maioria dos nós da rede que participam em mineração PoW/PoS precisa primeiro se atualizar, antes que a votação possa começar. Para a Proof-of-Work, pelo menos 75% dos 100 blocos mais recentes devem ter a versão de bloco mais recente. Para a Proof-of-Stake, 75% dos votos registrados dentro de um intervalo estático de 2016 blocos devem ter a versão de voto mais recente.
 
-The second step of this process is the actual voting. The previous 2016 block interval falls somewhere within a larger 5040 block interval and the network must wait for that larger 5040 block interval to end. Because of the different interval lengths, it *might* take up to an additional 5040 blocks before the voting window begins. After that, a static 5040 block interval transpires while votes are cast and if 75% of the votes mined within that interval signal a 'yes' vote to the proposed changes, the changes are fully implemented after one additional block interval (to give any remaining nodes the time needed to update to avoid being forked off the blockchain). Below is a simplified chart to explain each block interval in the order they chronologically appear.
+O segundo passo deste processo é a votação real. O intervalo anterior de 2016  blocos fica dentro de um intervalo de 5040 blocos maior, e a rede deve aguardar esse intervalo de 5040 blocos maior para terminar. Devido aos diferentes comprimentos de intervalo, isso *pode* levar até 5040 blocos adicionais antes que a janela de votação comece. Depois disso, um intervalo de 5040 blocos ocorre enquanto os votos são feitos e se 75% dos votos minerados dentro desse intervalo, sinalizam um "sim" para as alterações propostas, as mudanças são implementadas completamente após um intervalo de bloco adicional (para dar qualquer nó restante o tempo necessário para atualizar para evitar ser excluído da blockchain). Abaixo, um gráfico simplificado para explicar cada intervalo de blocos na ordem em que aparecem cronologicamente.
 
-Interval Description | Interval Type | Number of Blocks
+Descrição do intervalo | Tipo do Intervalo | Número de Blocos
 ---------------------|-------------|---------------
-Minimum 75% of Blocks must be newest version | Rolling | 100
-Minimum 75% of Votes must be newest version | Static | 2016
-Interval after upgrade requirements met | Static | Up to 5040
-Actual voting interval - 75% of Votes must signal a "yes" to pass | Static | 5040
-Pre-implementation interval if vote passes | Static | 5040
+Mínimo de 75% dos blocos deverão ser da nova versão | Corrido | 100
+Mínimo 75% dos votos deverão ser da nova versão | Estático | 2016
+Intervalo após um upgrade ocorre | Estático | Até 5040
+Intervalo de votação - 75% dos votos devem sinalizar um "sim" para passar | Estático | 5040
+Intervalo de Pré-implementação caso a votação passe | Estático | 5040
 
-If a proposal fails to reach a 10% threshold of either 'no' or 'yes' votes, stakeholders will be able to vote on it again during the next voting interval, until this threshold is met or the proposal expires. 
+Se uma proposta não atingir uma diferença de 10% de votos 'não' ou 'sim', os votantes poderão votar novamente durante o próximo intervalo de votação, até que este limite seja atingido ou a proposta expire.
 
-Below are instructions to participate in the voting demo on the Testnet using a stakepool with Paymetheus and/or the command line applications `dcrd`, `dcrwallet`, and `dcrctl`. The command line guide uses configuration files to pass parameters to the application during launch. Alternatively, flags can be used when starting an application, but they will not be covered in this draft.
+Abaixo estão instruções para participar da votação demo na Testnet usando uma stakepool com Paymetheus e/ou os softwares de linha de comando `dcrd`,`dcrwallet` e `dcrctl`. O guia de linha de comando usa arquivos de configuração para enviar os parâmetros para o aplicativo durante a inicialização. Como alternativa, as flags podem ser usadas ao iniciar um aplicativo, mas elas não serão incluídas neste rascunho.
 
 ## Paymetheus
 
-> Step 1: Download and Install Paymetheus
+> Passo 1: Faça o Download e instale a Paymetheus
 
-If you haven't already updated your Decred binaries to v0.8.2, visit the [Installation Guide](/getting-started/install-guide.md) and follow the directions for the Windows Installer.
+Se você ainda não atualizou seus binários da Decred para v0.8.2, visite o [Guia de Instalação](/getting-started/install-guide.md) e siga as instruções para o instalador do Windows.
 
-> Step 2: Run Decred Testnet
+> Passo 2: Execute a Testnet da Decred
 
-From the Start Menu, open `Decred Testnet`. This will launch `Paymetheus`, and a new Command Prompt window will open and run `dcrd.exe`. If this is the first time running the testnet daemon, it will take a while to sync to the testnet blockchain. 
+No menu Iniciar, abra `Decred Testnet`. Isto irá executar a `Paymetheus`, e uma nova janela de Prompt de Comando será aberta e executando `dcrd.exe`. Se esta é a primeira vez que executa o daemon da testnet, levará algum tempo para sincronizar com a blockchain da testnet.
 
-In the `Paymetheus` window, you'll be greated by a "Connect to dcrd" dialog. Keep the defaults and press the continue button. The next view will have two buttons, "Create a new wallet" and "Restore wallet from seed." For this guide, it will be assumed you do not already have a seed you wish to restore.
+Na janela `Paymetheus`, aparecerá uma caixa de diálogo "Connect to dcrd". Mantenha os padrões e pressione o botão Continue. A próxima janela terá dois botões, "Create a new wallet" e "Restore wallet from seed". Para este guia, assumiremos que você não tenha uma seed que deseja restaurar.
 
-After clicking "Create a new wallet," you'll be greeted with information regarding your new wallet seed. Record your seed, put it in a safe place, and never share it with anyone. You will also need to re-enter it once you press the CONTINUE button. 
+Depois de clicar em "Create a new wallet", você será recebido com informações sobre a seed de sua carteira. Grave sua seed, coloque-a em um lugar seguro e nunca compartilhe com ninguém. Você também precisará inserir ela assim que pressionar o botão CONTINUAR.
 
-After you've typed in your seed, the Encrypt Wallet view will be next. Enter a private passphrase as the directions explain. Press ENCRYPT. Paymetheus will then begin to create your wallet. Once it is created, it will open to your wallet overview page.
+Depois de digitar sua seed, a próxima janela será a Encrypt Wallet. Digite uma senha como as instruções explicam. Pressione ENCRYPT. A Paymetheus então começará a criar sua carteira. Uma vez criado, ele será aberto para sua página de visão geral da carteira.
 
-> Step 3: Register at Stakepool Website
+> Passo 3: Registre ao site da Stakepool
 
-While waiting for your node/wallet to sync, visit [https://teststakepool.decred.org](https://teststakepool.decred.org) and register for a new account. 
+Enquanto aguarda o nó/carteira sincronizar, visite [https://teststakepool.decred.org](https://teststakepool.decred.org) e registre uma nova conta.
 
-> Step 4: Acquire Testnet Coins
+> Passo 4: Adquira Decreds da Testnet
 
-Next, you'll need to acquire Testnet coins in order to buy Testnet tickets. There is an official Testnet faucet located at [https://faucet.decred.org](https://faucet.decred.org). To get a new address from Paymetheus, click the "Request payment" tab on the navigation menu. Clicking the "GENERATE ADDRESS" button will result in an address that should begin with "Ts". Copy and paste that address into the faucet and you should recieve your coins.
+Em seguida, você precisará adquirir moedas da Testnet para comprar os tickets. Existe uma Faucet oficial Testnet localizada em [https://faucet.decred.org] (https://faucet.decred.org). Para obter um novo endereço da Paymetheus, clique na guia "Request payment" no menu de navegação. Clique no botão "GENERATE ADDRESS" isso resultará em um endereço que deve começar com "Ts". Copie e cole esse endereço na Faucet e você deverá receber suas moedas.
 
-> Step 5: Purchase Testnet Tickets
+> Passo 5: Compre Tickets da Testnet
 
-Click the "Purchase tickets" tab within the Paymetheus navigation menu. You will see 7 form fields within the page. All of the defaults can be used for purchasing tickets **except** the "Stake pool preference". Click the "Manage pools" button. You need to enter the API key for your account at the testnet stakepool. To do this, simply visit [https://teststakepool.decred.org/settings](https://teststakepool.decred.org/settings) - your API Token should be the first item on the page. Enter it into the API Key field within Paymetheus and press Save. Your 1-of-2 multi-sig script will be automatically generated and you can press Close. 
+Clique na aba "Purchase tickets" no menu de navegação da Paymetheus. Você verá 7 campos de formulário na página. Todos os padrões podem ser usados para comprar bilhetes **exceto** o "Stake pool preference". Clique no botão "Manage pools". Você precisa inserir a chave da API da sua conta da stakepool da testnet. Para fazer isso, basta visitar [https://teststakepool.decred.org/settings](https://teststakepool.decred.org/settings) - o Token do API deve ser o primeiro item na página. Digite-o no campo API Key na Paymetheus e pressione Salvar. Seu script de 1-of-2 multi-sig será gerado automaticamente e você pode pressionar Fechar.
 
-Next, select teststakepool.decred.org from the Stake pool preference drop down and press the Purchase button to begin purchasing tickets! Note: the ticket difficulty is equal to the cost per ticket, so make sure you have enough testnet coins to purchase at least one.
+Em seguida, selecione teststakepool.decred.org na lista suspensa Preference da Stakepool e pressione o botão Comprar para começar a comprar os ingressos! Note: a dificuldade do ticket é igual ao custo por ticket, portanto, certifique-se de ter moedas testnet suficientes para comprar pelo menos um.
 
-> Step 6: Set The Votebits of Your Tickets via Stakepool 
+> Passo 6: Configure os Votebits dos seus tickets via Stakepool 
 
-When using a stakepool, any tickets you buy have their voting rights delegated to that stakepool. By default, the pool will vote any way it pleases with your tickets. Of course, you might want to change how your tickets vote.
+Utilizando uma stakepool, qualquer ticket que você compra tem seus direitos de voto delegados a essa stakepool. Por padrão, a pool votará como quiser com seus ingressos. Mas você pode mudar a forma como seus tickets irão votar.
 
-You can set the votebits of your tickets via the stakepool tickets interface. Below is a screenshot of the [https://teststakepool.decred.org/tickets](https://teststakepool.decred.org/tickets) page. At the bottom of the "Live/Immature" section of this page, you will see the votebit settings. You can only edit the votebits of *all* of your tickets at once via the pool's interface. The tickets displayed below were set to "Yes" for "Previous Block Valid?" and "Yes" for "Increase Block Size from 1.0 MiB to 1.25MB" which resulted in a Votebit value of 5. 
+Você pode definir os votos de seus bilhetes através da interface de tickets da stakepool. Abaixo está um print da página [https://teststakepool.decred.org/tickets](https://teststakepool.decred.org/tickets). Na parte inferior da seção "Live/Immature" desta página, você verá as configurações de voto. Você só pode editar os votos de *todos* os seus tickets de uma só vez, através da interface do pool. Os tickets exibidos abaixo foram definidos como "Sim" para "Previous Block Valid?" e "Sim" para "Increase Block Size from 1.0 MiB to 1.25MB" o que resultou em um voto de valor 5. 
 
 <img src="/img/testnet-voting_votebit-setting.jpg">
 
-For some basic information about Votebits, visit [An Explanation of Votebits](#an-explanation-of-votebits).
+Para outras informações sobre Votebits, visite [Uma Explicação sobre os Votebits](#an-explanation-of-votebits).
 
-## Command Line Instructions
+## Instruções de Linha de Comando
 
-> Step 1: Download and Install Decred
+> Passo 1: Faça o Download e Instale a Decred
 
-If you haven't already updated your Decred binaries to v0.8.2, visit the [Installation Guide](/getting-started/install-guide.md) and follow the directions for your operating system.
+Caso não tenha feito o upgrade do binários da Decred para a versão v0.8.2, visite o [Guia de Instalação](/getting-started/install-guide.md) e siga as instruções para seu ssitema operacional.
 
-> Step 2: Create Config Files
+> Passo 2: Crie os Arquivos de Configuração (Config Files)
 
-If you already familiar with the `.conf` files, continue to step 3.
+Se você já está familiarizado com os arquivos `.conf`, continue com o Passo 3.
 
-Please view our [Configuration Files Introduction](/getting-started/startup-basics.md#configuration-files) and either create new configuration files or copy the sample configuration files into the directories specified for your operating system.
+Por favor, veja a nossa [Introdução aos Arquivos de Configuração](/getting-started/startup-basics.md#configuration-files) e crie novos arquivos de configuração ou copie os arquivos de configuração de exemplo nas pastas especificadas para seu sistema operacional.
 
-> Step 3: Edit Config Files to Launch Testnet
+> Passo 3: Edite os Arquivos de configuração para executar a Testnet
 
-To run `dcrd`, `dcrwallet`, and `dcrctl` on the testnet, simply add `testnet=true` or `testnet=1` to all three configuration files. If you are using one of the sample config files, you can simply find the line that reads `;testnet=1` (the first setting within the Network Settings section) and delete the semi-colon. 
+Para executar o `dcrd`, a `dcrwallet` e o `dcrctl` na testnet, basta adicionar `testnet=true` ou `testnet=1` aos três arquivos de configuração. Se você estiver usando um dos arquivos de configuração de exemplo, você pode simplesmente encontrar a linha que lê `;testnet=1` (a primeira configuração na seção Network Settings) e excluir o ponto-e-vírgula.
 
-This must be done for all three configuration files. 
+Isso deve ser feito para os três arquivos de configuração.
 
-> Step 4: Create a New Testnet Wallet
+> Passo 4: Criar uma nova carteira na Testnet
 
-If you've never run a Testnet wallet before, you will need to create a new one. With your `dcrwallet.conf` setup for testnet **(see Step 3)**, run `dcrwallet` with the `--create` flag. 
+Se você nunca executou uma carteira na Testnet antes, você precisará criar uma nova. Com a configuração `dcrwallet.conf` para testnet **(ver Passo 3)**, execute `dcrwallet` com a flag `--create`.
 
-For those unfamiliar with how to do that, follow the operating system specific guide below:
+Para aqueles que não estão familiarizados com a forma de fazer isso, siga o guia específico do sistema operacional abaixo:
 
 **Windows**: <br />
-    1. Using Command Prompt or File Explorer, navigate to the directory of your `dcrwallet` executable <br />
-    2. If using File Explorer, select "Open command prompt" option from the "File" dropdown menu <br />
-    3. Enter the `dcrwallet.exe --create` command
+    1. Utilizando o Prompt de Comando ou o Explorador de Arquivos, navegue até a pasta do executável `dcrwallet` <br />
+    2. Se tiver utilizando o Explorador de Arquivos, selecione a opção "Abrir no Prompt de Comando" do menu "Arquivo" <br />
+    3. Digite o comando `dcrwallet.exe --create`
 
 **macOS**: <br />
-    1. Using Terminal or Finder, navigate to the directory of your `dcrwallet` executable <br />
-    2. If using Finder, you can open a new Terminal at a folder location by right-clicking a folder and selecting Services > New Terminal at Window from the dropdown menu<br />
-    3. Enter the `./dcrwallet --create` command
+    1. Utilizando o Terminal ou o Finder, navegue até a pasta do executável `dcrwallet` <br />
+    2. Se estiver utilizando o Finder, você pode abri um novo Terminal no local da pasta, clicando com o botão direito na pasta e selecionando Services > New Terminal na janela<br />
+    3. Digite o comando `./dcrwallet --create`
 
 **Linux**: <br />
-    1. Using anything you like, navigate to the directory of your `dcrwallet` executable <br />
-    2. Enter the `./dcrwallet --create` command
+    1. Da forma que preferir, navegue até à pasta do executável `dcrwallet` <br />
+    2. Digite o comando `./dcrwallet --create`
 
-This will run you through the usual prompts of creating a new wallet. Follow the directions on the screen. You will be required to create a private passphrase (you will use this later to unlock your wallet while creating transactions). The additional layer of encryption is completely optional. Your seed can be used to restore your wallet on any computer using dcrwallet. Record your seed, put it in a safe place, and never share it with anyone. The wallet will close once everything is finished.
+Isso irá levá-lo ao comando de criar uma nova carteira. Siga as instruções na tela. Você será obrigado a criar uma senha privada (você usará isso mais tarde para desbloquear sua carteira ao criar transações). Uma camada adicional de criptografia é completamente opcional. Sua seed pode ser usada para restaurar sua carteira em qualquer computador usando dcrwallet. Grave sua seed, coloque-a em um lugar seguro e nunca compartilhe com ninguém. A carteira fechará quando tudo estiver terminado.
 
-> Step 5: Start dcrd on the Testnet
+> Passo 5: Inicie o dcrd na Testnet
 
-Run your `dcrd` executable with the `testnet=1` or `testnet=true` option within the config file to start your node on the testnet. Your node will begin to sync with the rest of the network. Syncing will take a while.
+Execute o `dcrd` com a opção `testnet = 1` ou `testnet = true` no arquivo de configuração para iniciar o seu node na testnet. Seu node começará a sincronizar com o restante da rede. A sincronização levará um tempo.
 
-> Step 6: Start dcrwallet on the Testnet
+> Passo 6: Iniciar dcrwallet na Testnet
 
-Run your `dcrwallet` executable with the `testnet=1` or `testnet=true`option within the config file to start your wallet on the testnet. Your wallet will connect to your node and begin to sync your addresses. Syncing may take a while.
+Execute a `dcrwallet` com a opção `testnet = 1` ou `testnet = true` no arquivo de configuração para iniciar sua carteira na testnet. Sua carteira se conectará ao seu nó e começará a sincronizar seus endereços. A sincronização pode demorar um pouco.
 
-> Step 7: Register at Stakepool Website
+> Passo 7: Cadastre-se no site da Stakepool
 
-While waiting for your node/wallet to sync, visit [https://teststakepool.decred.org](https://teststakepool.decred.org) and register for a new account. Continue to step 8.
+Enquanto espera que seu node/carteira sincronize, visite [https://teststakepool.decred.org](https://teststakepool.decred.org) e registre uma nova conta. Continuar para Passo 8.
 
-> Step 8: Wait for Testnet Node/Wallet to Sync
+> Passo 8: aguarde Testnet Node/Wallet sincronizar
 
-Take a break, this may take a while. 
+Isso pode demorar um pouco.
 
-> Step 9: Create a Public Key Address to Use the Stakepool
+> Passo 9: Crie um endereço de Public Key para usar a Stakepool
 
-The first step to using a stakepool is the generate a new public key address to be used to generate a 1-of-2 multisignature script. Follow the directions on [https://teststakepool.decred.org/address](https://teststakepool.decred.org/address) to generate and save this address. If you've set up an account on a mainnet stakepool, this is the same.
+O primeiro passo para usar uma stakepool é gerar um novo endereço public key a ser usado para gerar um script multisignature 1-of-2. Siga as instruções em [https://teststakepool.decred.org/address](https://teststakepool.decred.org/address) para gerar e salvar este endereço. Se você configurou uma conta em uma stakepool da mainnet, é a mesma coisa.
 
-> Step 10: Import Your P2SH Multi-Sig Script From the Stakepool
+Passo 10: Importar seu script P2SH Multi-Sig da Stakepool
 
-Next, you need import a script that will allow you to delegate voting rights to the pool. After completing the previous step, this script should be available at [https://teststakepool.decred.org/tickets](https://teststakepool.decred.org/tickets). Again follow the directions there to import the script. If you've set up an account on a mainnet stakepool, this is the same.
+Em seguida, você precisa importar o script que permitirá que você delegue direitos de voto para a pool. Depois de concluir o [asso anterior, este script deve estar disponível em [https://teststakepool.decred.org/tickets](https://teststakepool.decred.org/tickets). Siga novamente as instruções para importar o script. Se você configurou uma conta em uma stakepool mainnet, isso é a mesma coisa.
 
-> Step 11: Acquire Testnet Coins
+> Passo 11: Aquisição de DCR da Testnet
 
-Next, you'll need to acquire Testnet coins in order to buy Testnet tickets. There is an official Testnet faucet located at [https://faucet.decred.org](https://faucet.decred.org). Enter a Testnet address (one can be retrieved by running the `getnewaddress` command - examples for each OS below)
+Em seguida, você precisará adquirir moedas da testnet para comprar tickets da Testnet. Existe uma Faucet oficial da Testnet localizada em [https://faucet.decred.org](https://faucet.decred.org). Digite um endereço Testnet (um pode ser gerado executando o comando `getnewaddress` - exemplos para cada OS estão abaixo)
 
     Windows: dcrctl.exe --wallet getnewaddress
     macOS/Linux: ./dcrctl --wallet getnewaddress
 
-> Step 12: Buy Testnet Tickets
+> Passo 12: Compre Tickets da Testnet
 
-[https://teststakepool.decred.org/tickets](https://teststakepool.decred.org/tickets) describes three options for buying tickets. Your best bet is to use manual purchasing, so you can purchase tickets whenever you need them. 
+[https://teststakepool.decred.org/tickets](https://teststakepool.decred.org/tickets) descreve três opções para comprar tickets. A melhor escolha é usar manual de compra, para que você possa comprar tickets quando precisar.
 
-Issue a `dcrctl --wallet getstakeinfo` command to see the current difficulty. This is the current ticket price. Adjust the purchaseticket command shown on the stakepool tickets page to accommodate that current ticket price.
+Rode um comando `dcrctl --wallet getstakeinfo` para ver a dificuldade atual. Este é o preço atual do ticket. Ajuste o comando purchaseticket mostrado na página de tickets da stakepool para considerar o preço atual do bilhete.
 
-> Step 13: Wait For Voting To Begin
+> Passo 13: Aguardar o início da votação
 
-First, a minimum of 75% of ALL votes cast in the last 2016 blocks must be from a node running the latest Decred software. Then, a block interval of 5040 blocks must pass before voting begins. Check [https://hardforkdemo.decred.org](https://hardforkdemo.decred.org) for the latest status on the entire voting process. 
+Primeiro, um mínimo de 75% de TODOS os votos dos últimos 2016 blocos deve ser de um nó executando o software mais recente da Decred. Em seguida, um intervalo de 5040 blocos deve passar antes do início da votação. Verifique [https://hardforkdemo.decred.org](https://hardforkdemo.decred.org) para obter o status mais recente em todo o processo de votação.
 
-> Step 14: Set The Votebits of Your Tickets via Stakepool 
+> Passo 14: Defina os Votos dos seus tickets através da Stakepool
 
-When using a stakepool, any tickets you buy have their voting rights delegated to that stakepool. By default, the pool will vote any way it pleases with your tickets. Of course, you might want to change how your tickets vote.
+Ao usar uma stakepool, qualquer ticket que você compre tem seus direitos de voto delegados a essa stakepool. Por padrão, a pool votará como quiser com seus ingressos. Mas você poderá mudar o voto de seus tickets ao seu critério.
 
-You can set the votebits of your tickets via the stakepool tickets interface. Below is a screenshot of the [https://teststakepool.decred.org/tickets](https://teststakepool.decred.org/tickets) page. At the bottom of the "Live/Immature" section of this page, you will see the votebit settings. You can only edit the votebits of *all* of your tickets at once via the pool's interface. The tickets displayed below were set to "Yes" for "Previous Block Valid?" and "Yes" for "Increase Block Size from 1.0 MiB to 1.25MB" which resulted in a Votebit value of 5. 
+Você pode definir os votos de seus bilhetes através da interface de tickets da stakepool. Abaixo está uma captura de tela da página [https://teststakepool.decred.org/tickets](https://teststakepool.decred.org/tickets). Na parte inferior da seção "Live / Immature" desta página, você verá as configurações de voto. Você só pode editar os votos de *todos* os seus ingressos de uma só vez através da interface do pool. Os tickets exibidos abaixo foram definidos como "Sim" para "Previous Block Valid?" E "Sim" para "Increase Block Size from 1.0 MiB to 1.25MB" o que resultou em um voto de valor 5. 
 
 <img src="/img/testnet-voting_votebit-setting.jpg">
 
-## An Explanation of Votebits
+## Uma explicação sobre os votos (Votebits)
 
-Below is a screenshot of all the meaningful votebit values for vote version 4:
+Abaixo você verá um screenshot de todos os valores importantes de um votebit para o voto versão 4:
 
-<img alt="Graph explaining the votebit values of vote version 4." src="/img/testnet-voting_vote-version-4.jpg">
+<img alt="Gráfico explicando os valores do voto de um voto versão 4." src="/img/testnet-voting_vote-version-4.jpg">
 
-This screenshot is fairly self-explanatory. Within the pool interface, if a user selected "Yes" for the block size increase and "Yes" for the previous block being valid, their ticket votebits would be set to "5". 
+Esta tela é bem auto-explicativa. Na interface do pool, se um usuário selecionou "Sim" para o aumento do tamanho do bloco e "Sim" para o bloco anterior ser válido, seus votos de voto serão definidos como "5".
 
-Below is a screenshot displaying where Votebits and Vote Version can be found within an actual vote casting transaction via the block explorer at [https://testnet.decred.org](https://testnet.decred.org). This Vote was cast with a Votebit value of 5, as noted by the 2nd transaction output. 
+Abaixo está uma captura de tela mostrando onde os Votebits e  a Versão do Voto podem ser encontrados dentro de uma transação de voto através do explorador de blocos em [https://testnet.decred.org](https://testnet.decred.org). Este voto foi emitido com um valor 5, conforme observado pelo 2º output da transação. 
 
 <img src="/img/testnet-voting_vote-version-and-votebits.jpg">
 
-You can easily check your cast votes by clicking the Ticket Transaction Hash of any of your tickets within the "Voted Tickets" section of the [https://teststakepool.decred.org/tickets](https://teststakepool.decred.org/tickets) page. (NOTE: You vote *might* display as a V0 [Version 0] due to a bug in the Stakepool code - this is being investigated and might even be solved by the time this guide is published.)
+Você pode facilmente verificar seus votos clicando no Hash da transação de qualquer um de seus tickets na seção "Voted Tickets" do site [https://teststakepool.decred.org/tickets](https://teststakepool.decred.org/tickets). (Note: seu voto *pode* ser exibido como V0 [Versão 0] devido a um bug no código da Stakepool - este bug está sendo investigado e pode ser resolvido antes deste guia ser publicado.)
 
 ## Hard Fork Demo Website
 
-For the purposes of displaying the status of the new voting implementation, [https://hardforkdemo.decred.org](https://hardforkdemo.decred.org) has been created. Each step is visualized by graphs and fairly straightforward explanations.
+Com o propósito de mostrar o status da implementação da nova votação o site, [https://hardforkdemo.decred.org](https://hardforkdemo.decred.org) foi criado. Cada etapa pode ser visualizada pelos gráficos e pelas explicações.
