@@ -1,56 +1,55 @@
-#  **<i class="fa fa-gavel"></i> Decred Constitution**
+#  **<i class="fa fa-gavel"></i> Constituição Decred**
 
 ---
 
-*Decred* (/ˈdi:ˈkred/, /dɪˈkred/, dee-cred) is an open, progressive, and self-funding cryptocurrency with a system of community-based governance integrated into its blockchain. The project mission is to develop technology for the public benefit, with a primary focus on cryptocurrency technology. *Decred*, as a currency and as a project, is bound by the following set of rules, which include guiding principles, a system of governance, and a funding mechanism. These rules have been established in an effort to create an equitable and sustainable framework within which to achieve *Decred*'s goals.
+*Decred* (/ˈdi:ˈkred/, /dɪˈkred/, dee-cred) é uma criptomoeda aberta, progressiva e auto-financiada com um sistema de governança baseada na comunidade, integrado em sua cadeia de blocos. A missão do projeto é desenvolver tecnologia para benefício público, com foco primário na tecnologia de criptomoeda. A *Decred*, como moeda e como projeto, está embasada pelo conjunto de regras a abaixo, que guiam seus princípios, um sistema de governança e um mecanismo de financiamento. Essas regras foram estabelecidas em um esforço para criar um quadro equitativo e sustentável para atingir os objetivos de *Decred*.
 
 ---
 
-## Principles
+## Princípios
 
-* *Free and Open-Source Software* - All software developed as part of *Decred* shall be free and open source-software.
-* *Free Speech and Consideration* - Everyone has the right to communicate opinions and ideas without fear of censorship. Consideration shall be given to all constructive speech that is based in fact and reason.
-* *Multi-Stakeholder Inclusivity* - Inclusivity represents a multi-stakeholder system and an active effort shall be maintained to include a diverse set of views and users. While it would be ideal to include everyone, *Decred* shall comply with all relevant bodies of law in the jurisdictions where applicable, such as embargoes and other trade sanctions.
-* *Incremental Privacy and Security* - Privacy and security are priorities and shall be balanced with the complexity of their implementations. Additional privacy and security technology shall be implemented on a continuing and incremental basis, both proactively and on-demand in response to attacks.
-* *Fixed Finite Supply* - Issuance is finite and the total maximum number of coins in *Decred* shall not change. The total maximum supply for *Decred* is 20,999,999.99800912 coins, with a per-block subsidy that adjusts every 6,144 blocks (approximately 21.33 days) by reducing by a factor of 100/101. The genesis block subsidy starts at 31.19582664 coins.
-* *Universal Fungibility* - Universal fungibility is fundamental to *Decred* being a store of value and attacks against it shall be actively monitored and countermeasures pursued as necessary.
-
----
-
-## Blockchain Governance
-
-* Governance of the network occurs directly through the blockchain via hybridization of a block's proof-of-work ("PoW") with its proof-of-stake ("PoS"). PoS contributors, known as stakeholders, can effectively override PoW contributors, known as miners, if 60% or more of the stakeholders vote against a particular block created by a miner.
-* A lottery system is used to determine which stakeholders vote on each block and collect a subsidy.
-* To be a stakeholder, one must purchase one or more tickets, which entails locking a specified amount of coins for approximately 1 day (256 blocks).
-* After waiting for the ticket to mature, the ticket is entered into a lottery that runs once per block where the winning tickets gain the ability to vote on the previous block.
-* Stakeholders must wait an average of 28 days (8,192 blocks) to vote their tickets, and during this time the coins used to purchase the ticket remain locked. The wait may be much longer or shorter than the average of 28 days because the ticket selection process is pseudorandom. Tickets expire after approximately 142 days (40,960 blocks).
-* Stakeholder votes recorded in the blockchain are rewarded with 6% of each block subsidy, and each block can have up to 5 votes for a total of 30% of each block subsidy.
-* PoW receives 60% of each block subsidy, subject to the constraint that their subsidy scales linearly with the number of PoS votes included, e.g. including 3 of 5 votes reduces PoW subsidy by 60%.
-* The votes themselves decide by majority decision whether the general transaction tree of the previous block, including the PoW subsidy, is valid. Thus, if PoS voters vote against a particular PoW block, it destroys the PoW subsidy (and development subsidy) and invalidates any regular transactions within that block.
-* Additional vote bits may be set when stakeholders submit votes, allowing stakeholders to vote on matters besides the previous block.
+* Software gratuito e de código aberto* - Todo o software desenvolvido como parte da *Decred* deve ser livre e de código aberto.
+* Livre expressão e respeito * - Todo mundo tem o direito de comunicar opiniões e idéias sem medo de censura. Deve se ter respeito e consideração a toda a fala construtiva que se baseie na realidade e na razão.
+* Inclusão dos diversos usuários * - A inclusão representa um sistema diverso de usuários e um esforço ativo deve ser mantido para incluir um conjunto diversificado de visões e usuários. Embora seja ideal para incluir todos, a *Decred* deve estar em concordância com todos os órgãos jurídicos relevantes nas jurisdições onde se aplicar, tais como embargos e outras sanções comerciais.
+* Privacidade e segurança* - Privacidade e segurança são prioridades e devem ser equilibradas com a complexidade de suas implementações. Privacidade e segurança adicionais na tecnologia devem ser implementadas de forma contínua e crescente, de forma proativa e sob demanda em resposta a ataques.
+* Reserva fixa e finita* - A emissão é finita e o número máximo total de moedas *Decred* não pode mudar. O número máximo de *Decred* é de 20.999.999.99800912 moedas, com um subsídio por bloco que ajusta a cada 6.144 blocos (aproximadamente 21,33 dias), reduzindo em um fator de 100/101. O subsídio do bloco inicial começou em 31,19582664 DCR.
+* Fungibilidade universal * - A fungibilidade universal é fundamental para a *Decred* sendo uma reserva de valor, e os ataques contra ela devem ser monitorados ativamente e as contramedidas tomadas conforme necessário.
 
 ---
 
-## Project Governance
+## Governança Blockchain
 
-* Off-chain decision-making shall be used to resolve disputes related to development and voted on by the *Decred Assembly* as they arise, as an effective proof-of-assembly ("PoA"), until such time PoA is integrated into the blockchain.
-* The *Decred Assembly* shall be composed of diverse Assembly members who are selected for membership by the *Admission Council* from the project ecosystem for representation.
-* Councils that are composed of Assembly members shall be formed to address ongoing and episodic matters. The initial Councils shall serve the separate functions of admission (*Admission Council*), creation (*Creation Council*), and attrition (*Attrition Council*).
-* The *Admission Council* shall vote on the inclusion of new members into the Assembly. All additional Councils shall be created by the *Creation Council*. The *Attrition Council* shall be responsible for deactivating both Councils and Assembly members as necessary.
-* Membership of the *Decred Assembly* shall consist of Assembly members who have been confirmed by a 60% or greater affirmative vote by the *Admission Council*. There is no restriction on the age or nationality of Assembly members, the only requirement is that of merit as judged by the *Admission Council*. Merit is judged on the basis of two characteristics: (1) the amount of time over which one has been involved with the project, and (2) one's body of work and its impact in the context of the project.
-* Attrition is embraced by temporarily deactivating or actively expelling Assembly members by a 60% or greater affirmative vote by the *Attrition Council* on the basis of: (1) substantial non-fulfillment of duties for one or more Councils or the Assembly, and/or (2) counterproductive behaviour that goes against the framework set forth in the Constitution without constructive action toward solutions.
-* All matters formally presented to a Council shall be resolved by a vote in 365 days or less.
+* A governança da rede ocorre diretamente através da blockchain através de um modelo híbrido de mineração proof-of-work ("PoW") com proof-of-stake ("PoS"). Os colaboradores da PoS, conhecidos como Stakeholders, podem efetivamente anular os colaboradores da PoW, conhecidos como mineradores, caso 60% ou mais dos Stakeholders votarem contra um determinado bloco criado por um minerador.
+* Um sistema de sorteio é usado para determinar quais Stakeholders votam em cada bloco e recebem uma recompensa.
+* Para ser um stakeholder, é preciso comprar um ou mais tickets, o que implica bloquear uma quantidade especificada de moedas por alguns dias ou meses.
+* Depois de esperar que o ticket "amadureça", o ticket entra em um sorteio que é ocorre uma vez por bloco, onde os tickets votados ganham o direito de votar no bloco anterior.
+* Os stakeholders aguardam uma média de 28 dias (8.192 blocos) para votar seus tickets, e durante esse período as moedas utilizadas para comprar o ticket permanecem bloqueadas. A espera pode ser muito maior ou menor do que a média de 28 dias porque o processo de seleção do ticket é pseudorandom. Os ingressos expiram após aproximadamente 142 dias (40.960 blocos).
+* Os votos dos Stakeholders registrados na blockchain são recompensados com 6% do subsídio do bloco, e cada bloco pode ter até 5 votos por um total de 30% de cada subsídio por bloco.
+* PoW recebe 60% de cada subsídio do bloco, sujeito à restrição de que seus subsídios escalem linearmente com o número de votos PoS incluídos, exemplo: Incluindo 3 de 5 votos reduz o subsídio de PoW em 60%.
+* Os próprios votos decidem por decisão maioritária se as transações do bloco anterior, incluindo o subsídio PoW, são válidos. Assim, se os votantes de PoS votarem contra um bloco de PoW em particular, ele destrói o subsídio de PoW (e o subsídio de desenvolvimento) e invalida quaisquer transações regulares dentro desse bloco.
+* Votos adicionais podem ser definidos quando os Stakeholders enviam votos, permitindo que os Stakeholders votem em assuntos além do bloco anterior.
+---
+
+## Governança do Projeto
+
+* Tomadas de decisões Off-chain podem ser utilizadas para resolver disputas relacionadas ao desenvolvimento e votado pela *Assembléia Decred* à medida que forem surgindo, como uma Proof-of-assembly ("PoA"), até que PoA seja integrado à blockchain.
+* A *Assembléia Decred* deve ser composta por diversos membros, selecionados pelo *Conselho de Admissão* do ecossistema do projeto para representação.
+* Os conselhos que são compostos por membros da Assembléia, devem ser formados para abordar assuntos em curso e esporádicos. Os conselhos iniciais devem servir às funções de admissão (*Conselho de admissão*), criação (*Conselho de Criação *) e destrato (*Conselho de Conciliação*).
+* O *Conselho de Admissão* votará a inclusão de novos membros na Assembléia. Todos os conselhos adicionais serão criados pelo *Conselho de Criação*. O *Conselho de Conciliação* será responsável por destituir os conselhos e os membros da Assembléia, caso necessário.
+* A adesão à *Assembléia Decred* será composta por membros que tenham sido confirmados por um voto afirmativo de 60% ou mais, pelo *Conselho de Admissão*. Não existe qualquer restrição à idade ou nacionalidade dos membros da Assembleia, o único requisito é o mérito, que será julgado pelo *Conselho de Admissão*. O mérito é julgado com base em duas características: (1) a quantidade de tempo em que o membro se envolveu o projeto, e (2) o trabalho e seu impacto no contexto do projeto.
+* A Conciliação é adotada para excluir temporariamente ou definitivamente membros da Assembléia, por um voto afirmativo de 60% ou mais do *Conselho de Conciliação* com base em: (1) descumprimento substancial dos deveres para um ou mais Conselhos e Assembléias, e/ou (2) comportamento contraproducente, contrário ao estabelecido na Constituição, sem busca por ações na busca por soluções.
+* Todos os assuntos formalmente apresentados a um Conselho deverão ser resolvidos por votação em 365 dias ou menos.
 
 ---
 
-## Funding
+## Financiamento
 
-* Sustainability and longevity require that a subsidy of 10% of all block rewards be given to a development organization on an ongoing basis. The initial development organization shall be *Decred Holdings Group* LLC ("DHG"), a Nevis LLC that is responsible for funding work related to the development of the project, such as software development, infrastructure, and awareness.
-* DHG shall only fund work that adheres to the guiding principles.
-* DHG shall issue public financial statements every six months, starting March 8th, 2016. The frequency of financial statements may increase with activity, but it shall not occur more often than quarterly.
-* DHG shall put forth a budget proposal each year on March 8th, after the corresponding public financial statement has been issued.
-* The *Funding Council* shall review, propose changes, make changes, and ultimately approve the proposal by April 8th, one month from the initial budget proposal.
-* Final approval of the budget via PoA vote shall occur after *Funding Council* approval by April 18th, two months from the initial proposal.
-* DHG shall make public requests for proposals ("RFPs") for projects that are to be completed by parties on a contractual basis. RFPs shall include a scope and an explanation of how the work shall benefit the project. Parties that submit proposals shall be required to include: (1) a detailed description of the work to be performed, (2) a series of milestones that can be verified as work is completed, and (3) a quote for the work, itemized by milestone, in U.S. Dollars ("USD").
-* All proposals, both submitted and accepted, shall be made public one week after a proposal has been selected. Once the selection occurs, the associated RFP shall be removed. Contracted parties shall be paid exclusively in *decred* ("DCR") at the current effective DCR/USD rate at the time of payment, unless specifically noted otherwise.
-* In the future, the development organization may need to change from DHG to another entity that serves an identical function. If and when this occurs, DHG shall transfer all assets to the new entity and the development subsidy shall be directed to the new entity.
+* A Sustentabilidade e longevidade exigem que um subsídio de 10% de todas as recompensas de um bloco, seja revertido à organização de desenvolvimento de forma contínua. A organização de desenvolvimento inicial é o *Decred Holdings Group* LLC ("DHG"), é uma LLC (Limited Liability Company) localizada em Nevis; e é a empresa responsável pelo financiamento de todo o trabalho relacionado ao desenvolvimento do projeto, tais como desenvolvimento de software, infra-estrutura e divulgação.
+* A DHG só deve financiar o trabalho que adira aos princípios orientadores.
+* A DHG deve emitir demonstrações financeiras públicas a cada seis meses, a partir de 8 de março de 2016. A freqüência das demonstrações financeiras pode aumentar com a atividade, mas não deve ocorrer com maior frequência do que trimestralmente.
+* A DHG apresentará uma proposta de orçamento a cada ano, em 8 de março, após a emissão da declaração financeira pública correspondente.
+* O *Conselho de Financiamento* deve rever, propor mudanças, fazer alterações e, finalmente, aprovar a proposta até 8 de abril, um mês a partir da proposta de orçamento inicial.
+* A aprovação final do orçamento através de votação através da PoA deve ocorrer após *Aprovação do Conselho de Financiamento* em 18 de abril, dois meses após a proposta inicial.
+* A DHG deve fazer solicitações públicas de propostas ("RFPs") para projetos que devem ser concluídos pelas partes em uma base contratual. As RFPs devem incluir um escopo e uma explicação de como o trabalho beneficiará o projeto. As partes que apresentarem propostas devem incluir: (1) uma descrição detalhada do trabalho a ser executado, (2)  os marcos do projeto, para que possa ser monitoradas as atividade de acordo com o desenvolvimento do trabalho, e (3) uma cotação para o trabalho, detalhada por marco, em dólares americanos ("USD").
+* Todas as propostas, apresentadas e aceitas, serão divulgadas uma semana após ter sido definido a vencedora. Uma vez que a seleção ocorre, a RFP associada deve ser removida. As partes contratadas serão pagas exclusivamente em *Decred* ("DCR") na taxa atual DCR/USD efetiva no momento do pagamento, a menos que seja especificamente mencionada de outra forma.
+* No futuro, a organização de desenvolvimento pode precisar mudar de DHG para outra entidade que tenha uma função idêntica. Se e quando isso ocorrer, a DHG transferirá todos os ativos para a nova entidade, bem como todo o subsídio de desenvolvimento.
